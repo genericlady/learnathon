@@ -1,36 +1,381 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+<div class="stage-shelf hidden" id="sidebar">
+  <ul class="nav nav-bordered nav-stacked flex-column">
+    <li class="nav-header"><small>Host a Workshop!</small></li>
+    <li class="nav-item">
+      <div class="form-group pl-4">
+        <input class="form-control" placeholder="name"></input>
+        <input class="form-control" placeholder="email"></input>
+        <input class="form-control" placeholder="workshop idea"></input>
+        <input class="form-control" 
+               placeholder="Time needed (45m - 90m blocks available)"></input>
+        <button class="btn btn-primary">Submit workshop</button>
+      </div>
+    </li>
+    <li class="nav-header"><small>Become a Sponsor!</small></li>
+    <li class="nav-item">
+      <div class="form-group pl-4">
+        <input class="form-control" placeholder="name"></input>
+        <input class="form-control" placeholder="email"></input>
+        <input class="form-control" placeholder="company"></input>
+        <input class="form-control" placeholder="Would you like to "></input>
+        <div class="form-group">
+          <label style="color: white;"
+                 for="exampleSelect1">Choose your contribution</label>
+          <select class="form-control" id="exampleSelect1">
+            <option>Donation towards food.</option>
+            <option>Swag to give away.</option>
+            <option>Prizes and Challenges to impose</option>
+            <option>Workshops</option>
+            <option>All of the above</option>
+          </select>
+        </div>
+        <button class="btn btn-primary">Become a sponsor</button>
+      </div>
+    </li>
+  </ul>
 </div>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+    <h4 class="text-muted"></h4>
+<div class="stage" id="stage">
+
+  <div class="block block-fill-height app-block-wayne"
+       style="background-image: url(/images/statue-of-liberty.png)">
+
+    <button class="btn btn-link stage-toggle" 
+            data-target="#stage" 
+            data-toggle="stage">
+      <span class="icon icon-menu stage-toggle-icon"></span>
+      Workshop / Sponsorship
+    </button>
+
+    <div class="block-sm-middle block-xs-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <h1 class="block-title mb-4">
+              <span class="text-ribbon text-ribbon-primary">
+                <span>
+                  <%= gettext "%{name}",
+                      name: "NYC Learnathon Spring 2017" %>
+                </span>
+              </span>
+            </h1>
+            <p class="lead mt-1">
+              <span class="text-ribbon text-ribbon-primary">
+                <span>
+                  Free Admission, Swag and Prizes!
+                  <button class="btn btn-secondary mt-1">
+                    Get your tickets
+                  </button>
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+
+  <div class="block block-inverse block-transparent py-0 app-block-grid">
+
+    <div class="block-bg-clip">
+      <div class="block-bg">
+        <div class="block-bg-img"></div>
+      </div>
+    </div>
+
+    <div class="container" id="grid">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="row mb-3 mb-md-5">
+            <div class="col-lg-12">
+              <div class="card card-bold card-danger mb-0 app-box-shadow">
+                <img class="w-100" src="images/flatiron-school-2.jpg">
+                <div class="card-block pb-5">
+                  <h4 class="mb-0">FLATIRON SCHOOL</h4>
+                  <p class="text-serif"><em>280 person capacity</em></p>
+                  <hr>
+                  <p class="text-serif"><em>Adam Enbar and Avi Flombaum started
+                  this programming mecca in 2012 to help students launch careers
+                  they love.</em></p>
+
+                  <p class="text-serif"><em>(The organizers of this event do not work for Flatiron. We are graduates.)</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-6">
+          <div class="row">
+            <div class="col mb-3 mb-md-5">
+              <div class="app-box-shadow">
+                <img src="images/flatiron-logo.png">
+              </div>
+            </div>
+          </div>
+          <div class="row hidden-md-down">
+            <div class="col-lg-12">
+              <img class="w-100" src="images/flatiron-team.png">
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-fill-height block-transparent block-angle app-block-chainz" id="chainz">
+
+    <div class="block-bg-clip">
+      <div class="block-bg">
+        <div class="block-bg-img block-bg-img-top"
+             style="background-image: url(images/ada.png)">
+        </div>
+      </div>
+    </div>
+
+    <div class="block-sm-middle block-xs-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 offset-sm-7">
+            <h1 class="block-title mb-4">
+              <span class="text-ribbon text-ribbon-primary">
+                <span>A Tribute to Ada Lovelace.</span>
+              </span>
+            </h1>
+            <p class="lead">
+              <span class="text-ribbon text-ribbon-primary">
+                <span>
+                  Thank you for getting us started. Now we all need to do our 
+                  part and share what we know.
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-fill-height block-transparent block-inverse block-angle app-block-kanye">
+    <div class="block-bg-clip">
+      <div class="block-bg">
+        <div class="block-bg-img block-bg-img-top"
+             style="background-image: url(images/madison-park.png)">
+        </div>
+      </div>
+    </div>
+
+    <div class="block-xs-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h1 class="block-title mb-4">
+              <span class="text-ribbon">
+                <span>Live Streaming of Workshops</span>
+              </span>
+            </h1>
+            <p class="lead">
+              <span class="text-ribbon">
+                <span>
+                 No matter where you are you can join us for workshops! 
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-8">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe width="682" height="384" src="https://www.youtube.com/embed/_2qkava0u9I" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-transparent block-fill-height block-angle block-app-mosdef">
+    <div class="block-bg-clip">
+      <div class="block-bg">
+        <div class="block-bg-img block-bg-img-top"
+             style="background-image: url(../assets/img/mosdef.jpg)">
+        </div>
+      </div>
+    </div>
+
+    <div class="block-xs-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-6">
+            <h1 class="block-title mb-4">
+              <span class="text-ribbon text-ribbon-primary">
+                <span>Stay up to date with us.</span>
+              </span>
+            </h1>
+
+            <div class="text-ribbon-inputs-split">
+              <input type="text" class="h4 text-ribbon-input text-ribbon-primary" placeholder="Name">
+              <input type="text" class="h4 text-ribbon-input text-ribbon-primary" placeholder="Email">
+            </div>
+            <input type="text" class="h4 text-ribbon-input text-ribbon-input-half text-ribbon-primary" placeholder="Promo code">
+            <button type="button" class="btn btn-square btn-primary btn-lg btn-block">
+              We will let you know when tickets become available.
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-fill-height block-inverse app-block-nicki"
+       style="background-image: url(../assets/img/nicki.jpg)"
+       id="pricing">
+    <div class="block-xs-middle">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-5">
+            <h1 class="block-title mb-4">
+              <span class="text-ribbon">
+                <span>Tickets are FREE.</span>
+              </span></h1>
+            <p class="lead">
+              <span class="text-ribbon text-muted">
+                <span>
+                  All we ask is that you enjoy yourself, learn something new and
+                  share something that you know with someone you meet.
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card accent-primary">
+              <div class="card-block">
+                <h3 class="card-title">Day One</h3>
+                <h4 class="text-primary text-serif mt-0 mb-3">
+                  <em>April 29th 9am - 5pm</em>
+                </h4>
+                <p class="text-serif mb-1">
+                  <em>
+                  Day one is full of workshops to watch and participate in.
+                  </em>
+                </p>
+                <button class="btn btn-primary btn-square btn-block btn-lg">
+                  Get your ticket</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card accent-primary">
+              <div class="card-block">
+                <h3 class="card-title">Day Two</h3>
+                <h4 class="text-primary text-serif mt-0 mb-3">
+                  <em>April 30th 10am - 8pm</em>
+                </h4>
+                <p class="text-serif mb-1">
+                  <em>
+                  Day two is a hackathon where you get to use any Webstack to 
+                  complete the challenges. There are some various themes to 
+                  choose from.
+                  </em>
+                </p>
+                <button class="btn btn-primary btn-square btn-block btn-lg">
+                 Get your ticket</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="block block-inverse accent-primary" id="footer">
+    <div class="container">
+      <div class="row text-serif">
+        <div class="col-md-2 mb-4">
+          <ul class="list-unstyled list-spaced">
+            <li><h4>Tech</h4></li>
+            <li class="text-muted"><em>Overview</em></li>
+            <li class="text-muted"><em>Design</em></li>
+            <li class="text-muted"><em>Display</em></li>
+            <li class="text-muted"><em>Technology</em></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-4">
+          <ul class="list-unstyled list-spaced">
+            <li><h4>Press</h4></li>
+            <li class="text-muted"><em>Overview</em></li>
+            <li class="text-muted"><em>Design</em></li>
+            <li class="text-muted"><em>Display</em></li>
+            <li class="text-muted"><em>Technology</em></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-4">
+          <ul class="list-unstyled list-spaced">
+            <li><h4>Other</h4></li>
+            <li class="text-muted"><em>Overview</em></li>
+            <li class="text-muted"><em>Design</em></li>
+            <li class="text-muted"><em>Display</em></li>
+            <li class="text-muted"><em>Technology</em></li>
+          </ul>
+        </div>
+        <div class="col-md-6 mb-4">
+          <ul class="list-unstyled list-spaced">
+            <li><h4>Code of Conduct</h4></li>
+            <li class="text-muted">
+              <em>
+                Our event is designed to foster meaningful collaboration between 
+                participants, community members, and government partners.
+                Provide a safe, respectful, and welcoming environment where all 
+                are free to fully express their ideas and identities free from 
+                discrimination or harassment.
+                Collaborate for the purpose of generating ideas that empower, 
+                innovate, and develop local impact.
+                Presume the value of others and cherish everyone’s ideas, 
+                skills, and contributions.
+                Encourage others to listen as much as they speak, ask respectful 
+                questions, and demystify context.
+                Foster an energy that builds “yes, and” ideas, tools, and/or 
+                platforms.
+              </em>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="block text-center">
+  <div class="container-fluid">
+    <h4 class="mb-4">
+      We would love to have you host a workshop! <strong>Tell us</strong> your idea!
+    </h4>
+    <form class="form-inline d-flex justify-content-center">
+      <input class="form-control mb-3" placeholder="email address">
+      <input class="form-control mb-3" placeholder="name">
+      <input class="form-control mb-3" placeholder="idea">
+      <input class="form-control mb-3" 
+             placeholder="time needed 45m-90m slots available">
+      <button class="btn btn-primary mb-3">Submit workshop</button>
+    </form>
+    <small class="text-muted">
+      You won't be added to an email list of any kind and won't receive spam.
+      <a href="#">Terms of service</a>
+    </small>
+  </div>
+</div>
+<div class="block block-bordered text-center">
+  <div class="container-fluid">
+    <blockquote class="pull-quote">
+      <p>
+      “We look forward to having you.”
+      </p>
+      <cite>Yonk, Organizer</cite>
+    </blockquote>
   </div>
 </div>
