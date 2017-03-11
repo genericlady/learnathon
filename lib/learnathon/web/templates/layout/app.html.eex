@@ -8,8 +8,7 @@
     <meta name="author" content="">
 
     <title>Hello Learnathon!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/toolkit.min.css") %>">
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/custom.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
       /* this chunk of css is not part of the toolkit :) */
@@ -41,9 +40,7 @@
       </main>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/jquery.min.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/tether.min.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/toolkit.min.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/application.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
