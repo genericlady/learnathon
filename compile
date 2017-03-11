@@ -1,3 +1,3 @@
 nfo "Building Phoenix static assets"
 brunch build --production
-mix phx.digest
+mix phoenix.digest
