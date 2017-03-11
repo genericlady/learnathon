@@ -2,23 +2,24 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      //joinTo: "js/app.js"
 
       // To use a separate vendor.js bundle, specify two files path
       // https://github.com/brunch/brunch/blob/master/docs/config.md#files
-      // joinTo: {
-      //  "js/app.js": /^(js)/,
-      //  "js/vendor.js": /^(vendor)|(deps)/
-      // }
+      joinTo: {
+       "js/vendor.js": /^(assets\/vendor\/js)|(deps)/
+      },
       //
       // To change the order of concatenation of files, explicitly mention here
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
-      // order: {
-      //   before: [
-      //     "vendor/js/jquery-2.1.1.js",
-      //     "vendor/js/bootstrap.min.js"
-      //   ]
-      // }
+      order: {
+        before: [
+          "vendor/js/jquery.min.js",
+          "vendor/js/tether.min.js",
+          "vendor/js/toolkit.min.js",
+          "vendor/js/application.js"
+        ]
+      }
     },
     stylesheets: {
       joinTo: "css/app.css"
