@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :learnathon, Learnathon.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "learnathon",
+  password: System.get_env("LEARNATHON_DB_PW"),
   database: "learnathon_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

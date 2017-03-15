@@ -9,6 +9,14 @@ use Mix.Config
 config :learnathon,
   ecto_repos: [Learnathon.Repo]
 
+config :learnathon, Learnathon.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "learnathon_repo",
+  username: "learnathon",
+  password: System.get_env("LEARNATHON_DB_PW"),
+  hostname: "localhost"
+
+
 # Configures the endpoint
 config :learnathon, Learnathon.Web.Endpoint,
   url: [host: "localhost"],
@@ -29,3 +37,4 @@ import_config "#{Mix.env}.exs"
 config :learnathon,
       mailgun_domain: System.get_env("MAILGUN_DOMAIN"),
       mailgun_key: System.get_env("MAILGUN_API_KEY")
+
