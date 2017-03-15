@@ -17,7 +17,7 @@ defmodule Learnathon.Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/submission/:workshop_submission", SubmissionController, :show
+    post "/submission", SubmissionController, :create
   end
 
   # Other scopes may use custom stacks.
