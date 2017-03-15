@@ -1,36 +1,44 @@
 <div class="stage-shelf hidden" id="sidebar">
   <ul class="nav nav-bordered nav-stacked flex-column">
-    <li class="nav-header"><small>Host a Workshop!</small></li>
+    <li class="nav-header"><small>Host a Workshop and/or Become A Sponsor!</small></li>
     <li class="nav-item">
-      <div class="form-group pl-4">
-        <input class="form-control" placeholder="name"></input>
-        <input class="form-control" placeholder="email"></input>
-        <input class="form-control" placeholder="workshop idea"></input>
-        <input class="form-control" 
-               placeholder="Time needed (45m - 90m blocks available)"></input>
-        <button class="btn btn-primary">Submit workshop</button>
-      </div>
-    </li>
-    <li class="nav-header"><small>Become a Sponsor!</small></li>
-    <li class="nav-item">
-      <div class="form-group pl-4">
-        <input class="form-control" placeholder="name"></input>
-        <input class="form-control" placeholder="email"></input>
-        <input class="form-control" placeholder="company"></input>
-        <input class="form-control" placeholder="Would you like to "></input>
-        <div class="form-group">
-          <label style="color: white;"
-                 for="exampleSelect1">Choose your contribution</label>
-          <select class="form-control" id="exampleSelect1">
-            <option>Donation towards food.</option>
-            <option>Swag to give away.</option>
-            <option>Prizes and Challenges to impose</option>
-            <option>Workshops</option>
-            <option>All of the above</option>
-          </select>
+      <%= form_for @conn, submission_path(@conn, :create), 
+        [as: :submission], fn form -> %>
+        <%= text_input form, :name, 
+         [class: "form-control", placeholder: "Name"] %>
+        <%= text_input form, :company, 
+         [class: "form-control", placeholder: "Company"] %>
+        <%= text_input form, :email, 
+          [class: "form-control", placeholder: "Email"]  %>
+        <%= text_input form, :workshop_idea, 
+          [class: "form-control", placeholder: "Workshop Idea"]  %>
+        <%= text_input form, :time_needed, 
+          [class: "form-control", placeholder: "Time Needed (45m - 90m blocks available)"]  %>
+        <%= checkbox(form, :sponsor, [id: "sponsor"]) %>
+        <label for="sponsor" style="color: white;">
+          Would you like to be a sponsor?
+        </label>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="donation" disabled>
+            Donation towards food and expenses.
+          </label>
         </div>
-        <button class="btn btn-primary">Become a sponsor</button>
-      </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="prizes_challenges" disabled>
+            Prizes and Challenges
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="swag" disabled>
+            Donate Swag
+          </label>
+        </div>
+
+        <%= submit "Submit Workshop", [class: "btn btn-primary"] %>
+      <% end %>
     </li>
   </ul>
 </div>
@@ -198,7 +206,7 @@
     <div class="block-bg-clip">
       <div class="block-bg">
         <div class="block-bg-img block-bg-img-top"
-             style="background-image: url(../assets/img/mosdef.jpg)">
+             style="background-image: url()">
         </div>
       </div>
     </div>
@@ -228,7 +236,7 @@
   </div>
 
   <div class="block block-fill-height block-inverse app-block-nicki"
-       style="background-image: url(../assets/img/nicki.jpg)"
+       style="background-image: url()"
        id="pricing">
     <div class="block-xs-middle">
       <div class="container">
