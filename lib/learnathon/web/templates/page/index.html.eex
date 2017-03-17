@@ -5,35 +5,53 @@
       <%= form_for @conn, submission_path(@conn, :create), 
         [as: :submission], fn form -> %>
         <%= text_input form, :name, 
-         [class: "form-control", placeholder: "Name"] %>
+          [class: "form-control", placeholder: "Name"] %>
         <%= text_input form, :company, 
-         [class: "form-control", placeholder: "Company"] %>
+          [class: "form-control", placeholder: "Company"] %>
         <%= text_input form, :email, 
           [class: "form-control", placeholder: "Email"]  %>
         <%= text_input form, :workshop_idea, 
           [class: "form-control", placeholder: "Workshop Idea"]  %>
         <%= text_input form, :time_needed, 
           [class: "form-control", placeholder: "Time Needed (45m - 90m blocks available)"]  %>
-        <%= checkbox(form, :sponsor, [id: "sponsor"]) %>
-        <label for="sponsor" style="color: white;">
+
+        <label id="sponsor" style="color: white;">
           Would you like to be a sponsor?
         </label>
-        <div class="form-check disabled">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="donation" disabled>
-            Donation towards food and expenses.
+
+        <div id="sponsorOption" class="form-check">
+          <label id="sponsorOptionLabel" class="form-check-label">
+          <%= checkbox form, :donation, 
+              [
+                id: "sponsorOptionInput",
+                class: "form-check-input"
+              ] %>
+              <span class="ml-3">Donation towards food and expenses.</span>
           </label>
         </div>
-        <div class="form-check disabled">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="prizes_challenges" disabled>
-            Prizes and Challenges
+
+        <div id="sponsorOption" class="form-check">
+          <label id="sponsorOptionLabel" class="form-check-label">
+          <%= checkbox form, :prizes, 
+              [
+                id: "sponsorOptionInput",
+                class: "form-check-input"
+              ] %>
+              <span class="ml-3">
+                Prizes and Challenges
+              </span>
           </label>
         </div>
-        <div class="form-check disabled">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="swag" disabled>
-            Donate Swag
+        <div id="sponsorOption" class="form-check">
+          <label id="sponsorOptionLabel" class="form-check-label">
+          <%= checkbox form, :swag, 
+              [
+                id: "sponsorOptionInput",
+                class: "form-check-input"
+              ] %>
+              <span class="ml-3">
+                Donate Swag
+              </span>
           </label>
         </div>
 
@@ -49,7 +67,7 @@
   <div class="block block-fill-height app-block-wayne"
        style="background-image: url(/images/statue-of-liberty.png)">
 
-    <button class="btn btn-link stage-toggle" 
+    <button class="btn btn-link btn-lg stage-toggle" 
             data-target="#stage" 
             data-toggle="stage">
       <span class="icon icon-menu stage-toggle-icon"></span>
@@ -72,9 +90,9 @@
               <span class="text-ribbon text-ribbon-primary">
                 <span>
                   Free Admission, Swag and Prizes!
-                  <button class="btn btn-secondary mt-1">
+                  <a href="#subscribe" class="btn btn-secondary mt-1">
                     Get your tickets
-                  </button>
+                  </a>
                 </span>
               </span>
             </p>
@@ -211,7 +229,7 @@
       </div>
     </div>
 
-    <div class="block-xs-middle">
+    <div id="subscribe" class="block-xs-middle">
       <div class="container">
         <div class="row">
           <div class="col-md-6 offset-md-6">
@@ -222,13 +240,19 @@
             </h1>
 
             <div class="text-ribbon-inputs-split">
-              <input type="text" class="h4 text-ribbon-input text-ribbon-primary" placeholder="Name">
-              <input type="text" class="h4 text-ribbon-input text-ribbon-primary" placeholder="Email">
+              <%= form_for @conn, submission_path(@conn, :create), 
+                [as: :submission], fn form -> %>
+                <%= text_input form, :name, 
+                    [class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
+                    placeholder: "Name"] %>
+                <%= text_input form, :email, 
+                    [class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
+                    placeholder: "Email"] %>
+                <%= submit "We will let you know when tickets become available.", 
+                    [class: "btn btn-primary btn-square btn-lg btn-block"] %>
+              <% end %>
             </div>
-            <input type="text" class="h4 text-ribbon-input text-ribbon-input-half text-ribbon-primary" placeholder="Promo code">
-            <button type="button" class="btn btn-square btn-primary btn-lg btn-block">
-              We will let you know when tickets become available.
-            </button>
+
           </div>
         </div>
       </div>
@@ -269,8 +293,8 @@
                   Day one is full of workshops to watch and participate in.
                   </em>
                 </p>
-                <button class="btn btn-primary btn-square btn-block btn-lg">
-                  Get your ticket</button>
+                <a href="#subscribe" class="btn btn-primary btn-square btn-block btn-lg">
+                  Get your ticket</a>
               </div>
             </div>
           </div>
@@ -288,8 +312,8 @@
                   choose from.
                   </em>
                 </p>
-                <button class="btn btn-primary btn-square btn-block btn-lg">
-                 Get your ticket</button>
+                <a href="#subscribe" class="btn btn-primary btn-square btn-block btn-lg">
+                 Get your ticket</a>
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ defmodule Learnathon.Repo.Migrations.CreatePeople do
     create table(:people) do
       add :name, :string
       add :email, :string
-      add :workshop_idea, :string
+      add :workshop_idea, :text
       add :time_needed, :string
       add :company, :string
       add :contribution, :string

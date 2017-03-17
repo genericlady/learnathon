@@ -6,6 +6,9 @@ defmodule Learnathon.Person do
   schema "people" do
     field :name, :string
     field :email, :string
+    field :donation, :string
+    field :swag, :string
+    field :prizes, :string
     field :workshop_idea, :string
     field :time_needed, :string
     field :company, :string
@@ -25,6 +28,7 @@ defmodule Learnathon.Person do
   end
 
   defp permitted_attributes do
-    [:name, :email, :workshop_idea, :time_needed, :company, :contribution]
+    [:name, :email, :workshop_idea, :time_needed, :company, :contribution, 
+     :donation, :swag, :prizes]
   end
 end
