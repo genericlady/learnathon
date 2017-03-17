@@ -1,0 +1,64 @@
+<div class="stage-shelf hidden" id="sidebar">
+  <ul class="nav nav-bordered nav-stacked flex-column">
+    <li class="nav-header"><small>Host a Workshop and/or Become A Sponsor!</small></li>
+    <li class="nav-item">
+      <%= form_for @conn, submission_path(@conn, :create), 
+        [as: :submission], fn form -> %>
+        <%= text_input form, :name, 
+          [class: "form-control", placeholder: "Name"] %>
+        <%= text_input form, :company, 
+          [class: "form-control", placeholder: "Company"] %>
+        <%= text_input form, :email, 
+          [class: "form-control", placeholder: "Email"]  %>
+        <%= text_input form, :workshop_idea, 
+          [class: "form-control", placeholder: "Workshop Idea"]  %>
+        <%= text_input form, :time_needed, 
+          [class: "form-control", placeholder: "Time Needed (45m - 90m blocks available)"]  %>
+
+        <label id="sponsor" style="color: white;">
+          Would you like to be a sponsor?
+        </label>
+
+        <div id="sponsorOption" class="form-check">
+          <label id="sponsorOptionLabel" class="form-check-label">
+          <%= checkbox form, :donation, 
+              [
+                id: "sponsorOptionInput",
+                class: "form-check-input"
+              ] %>
+              <span class="ml-3">Donation towards food and expenses.</span>
+          </label>
+        </div>
+
+        <div id="sponsorOption" class="form-check">
+          <label id="sponsorOptionLabel" class="form-check-label">
+          <%= checkbox form, :prizes, 
+              [
+                id: "sponsorOptionInput",
+                class: "form-check-input"
+              ] %>
+              <span class="ml-3">
+                Prizes and Challenges
+              </span>
+          </label>
+        </div>
+        <div id="sponsorOption" class="form-check">
+          <label id="sponsorOptionLabel" class="form-check-label">
+          <%= checkbox form, :swag, 
+              [
+                id: "sponsorOptionInput",
+                class: "form-check-input"
+              ] %>
+              <span class="ml-3">
+                Donate Swag
+              </span>
+          </label>
+        </div>
+
+        <%= submit "Submit Workshop", [class: "btn btn-primary"] %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+

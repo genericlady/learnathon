@@ -1,0 +1,47 @@
+<div class="block block-inverse block-transparent py-0 app-block-flatiron">
+
+  <div class="block-bg-clip">
+    <div class="block-bg">
+      <div class="block-bg-img"></div>
+    </div>
+  </div>
+
+  <div class="container" id="grid">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="row mb-3 mb-md-5">
+          <div class="col-lg-12">
+            <div class="card card-bold card-danger mb-0 app-box-shadow">
+              <img class="w-100" src="images/flatiron-school-2.jpg">
+              <div class="card-block pb-5">
+                <h4 class="mb-0">FLATIRON SCHOOL</h4>
+                <p class="text-serif"><em>280 person capacity</em></p>
+                <hr>
+                <p class="text-serif"><em>Thank you to Flatiron school for 
+                  donating your space.</em></p>
+
+                <p class="text-serif"><em>(The organizers of this event do not work for Flatiron. We are graduates.)</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-6">
+        <div class="row">
+          <div class="col mb-3 mb-md-5">
+            <div class="app-box-shadow">
+              <img src="images/flatiron-logo.png">
+            </div>
+          </div>
+        </div>
+        <div class="row hidden-md-down">
+          <div class="col-lg-12">
+            <img class="w-100" src="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
