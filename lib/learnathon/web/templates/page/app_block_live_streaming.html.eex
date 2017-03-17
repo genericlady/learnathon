@@ -1,4 +1,4 @@
-<div class="block block-fill-height block-transparent block-inverse block-angle app-block-live-streaming">
+<div class="block block-transparent block-inverse block-angle app-block-live-streaming">
   <div class="block-bg-clip">
     <div class="block-bg">
       <div class="block-bg-img block-bg-img-top"
@@ -9,10 +9,10 @@
 
   <div class="block-xs-middle">
     <div class="container">
-      <div class="row">
-        <div class="col-md-5">
+      <div class="row live-streaming-row">
+        <div class="col-lg-5">
           <h1 class="block-title mb-4">
-            <span class="text-ribbon">
+            <span class="text-ribbon text-ribbon-secondary">
               <span>Live Streaming of Workshops</span>
             </span>
           </h1>
@@ -28,7 +28,7 @@
       <div class="row mb-3">
         <div class="col-8">
           <div class="w-100">
-            <iframe width="682" height="384" src="https://www.youtube.com/embed/_2qkava0u9I" frameborder="0" allowfullscreen></iframe>
+            <iframe class="live-streaming-iframe" src="https://www.youtube.com/embed/_2qkava0u9I" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </div>

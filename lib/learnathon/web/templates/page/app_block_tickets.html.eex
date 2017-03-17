@@ -1,4 +1,4 @@
-<div class="block block-fill-height block-inverse app-block-tickets"
+<div class="block block-inverse app-block-tickets"
      style="background-image: url()"
      id="pricing">
   <div class="block-xs-middle">
@@ -25,7 +25,7 @@
             <div class="card-block">
               <h3 class="card-title">Day One</h3>
               <h4 class="text-primary text-serif mt-0 mb-3">
-                <em>April 29th 9am - 5pm</em>
+                <em>June 24th 9am - 5pm</em>
               </h4>
               <p class="text-serif mb-1">
               <em>
@@ -42,7 +42,7 @@
             <div class="card-block">
               <h3 class="card-title">Day Two</h3>
               <h4 class="text-primary text-serif mt-0 mb-3">
-                <em>April 30th 10am - 8pm</em>
+                <em>June 25th 9am - 7pm</em>
               </h4>
               <p class="text-serif mb-1">
               <em>
@@ -60,5 +60,4 @@
     </div>
   </div>
 </div>
-
 

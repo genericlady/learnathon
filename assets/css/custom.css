@@ -1,3 +1,20 @@
 .alert-info-text { color: yellow; }
 .alert-danger-text { color: red; }
 #sponsorOptionLabel { color: white !important; }
+.live-streaming-iframe {
+  width: 682px;
+  height: 384px;
+}
+@media (max-width: 767px) {
+  .live-streaming-iframe {
+    width: 320px;
+    height: auto;
+  }
+
+  input.text-ribbon-input {
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+}
+
+button { white-space: normal !important; }

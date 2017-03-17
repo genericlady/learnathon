@@ -19,16 +19,16 @@
 
           <div class="text-ribbon-inputs-split">
             <%= form_for @conn, submission_path(@conn, :create), 
-[as: :submission], fn form -> %>
-<%= text_input form, :name, 
-[class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
-placeholder: "Name"] %>
-<%= text_input form, :email, 
-[class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
-placeholder: "Email"] %>
-<%= submit "We will let you know when tickets become available.", 
-[class: "btn btn-primary btn-square btn-lg btn-block"] %>
-              <% end %>
+                [as: :submission], fn form -> %>
+              <%= text_input form, :name, 
+                  [class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
+                  placeholder: "Name"] %>
+              <%= text_input form, :email, 
+                  [class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
+                  placeholder: "Email"] %>
+              <%= submit "We will let you know when tickets become available.", 
+                  [class: "btn btn-primary btn-square btn-lg btn-block"] %>
+            <% end %>
           </div>
 
         </div>
