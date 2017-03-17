@@ -21,10 +21,10 @@ defmodule Learnathon.Web.SubmissionController do
   end
 
   defp thank_you_message do
-    "Thank you for you! We will keep you updat with changes!"
+    "Thank you for your submission! We will keep you up to date with changes!"
   end
 
   defp error_message do
-    "There is an error, try again. If you're trying to update your submission please reach out to us at submissions at learnathon.nyc"
+    "There was an error, try again. If you're trying to update your submission please reach out to us ( submissions at learnathon.nyc )"
   end
 end
