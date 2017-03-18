@@ -2,7 +2,7 @@
   <div class="block-bg-clip">
     <div class="block-bg">
       <div class="block-bg-img block-bg-img-top"
-           style="background-image: url()">
+           style="background-image: url('images/west-side-highway.png')">
       </div>
     </div>
   </div>
