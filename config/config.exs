@@ -38,3 +38,5 @@ config :learnathon,
       mailgun_domain: System.get_env("MAILGUN_DOMAIN"),
       mailgun_key: System.get_env("MAILGUN_API_KEY")
 
+# ElixirLinter
+config :elixir_linter, github_oauth_token: System.get_env("GITHUB_TOKEN")

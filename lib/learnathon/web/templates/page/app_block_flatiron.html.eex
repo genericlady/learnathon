@@ -38,7 +38,7 @@
             <img class="w-100" src="images/flatiron-workshop-cropped.png">
           </div>
         </div>
-        <div class="row hidden-md-down">
+        <div class="row">
           <div class="col-lg-12">
             <img class="w-100" src="images/flatiron-turing-facing-out.png">
           </div>

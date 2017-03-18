@@ -25,6 +25,7 @@ defmodule Learnathon.Web.SubmissionController do
   end
 
   defp error_message do
-    "There was an error, try again. If you're trying to update your submission please reach out to us ( submissions at learnathon.nyc )"
+    "There was an error, try again. If you're trying to update your submission 
+    please reach out to us ( submissions at learnathon.nyc )"
   end
 end

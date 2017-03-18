@@ -18,7 +18,7 @@ defmodule Learnathon.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Learnathon.Application, []},
-     extra_applications: [:logger, :runtime_tools, :ecto, :postgrex]]
+     extra_applications: [:elixir_linter, :logger, :runtime_tools, :ecto, :postgrex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,8 @@ defmodule Learnathon.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:mailgun, "~> 0.1.2"},
-     {:poison, "~> 2.1", override: true}]
+     {:poison, "~> 2.1", override: true},
+     {:elixir_linter, "~> 0.1.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

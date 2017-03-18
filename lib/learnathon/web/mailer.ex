@@ -10,15 +10,16 @@ defmodule Learnathon.Mailer do
   def send_welcome_email(email_address) do
     send_email to: email_address,
     from: @from,
-    subject: "Thank you for your submission to Learnathon!",
-    text: welcome_text,
-    html: welcome_html
+    subject: thank_you_for_submission(),
+    text: welcome_text(),
+    html: welcome_html()
   end
 
   def send_welcome_text_email(email_address) do
     send_email to: email_address,
+    subject: thank_you_for_submission(),
     from: "submissions@learnathon.nyc",
-    text: welcome_text
+    text: welcome_text()
   end
 
   def send_welcome_html_email(email_address) do
@@ -56,5 +57,9 @@ defmodule Learnathon.Mailer do
 
   defp welcome_html do
     Phoenix.View.render_to_string(Learnathon.EmailView, "welcome.html", %{})
+  end
+
+  defp thank_you_for_submission do
+    "Thank you for your submission to Learnathon!"
   end
 end

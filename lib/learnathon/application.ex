@@ -5,6 +5,7 @@ defmodule Learnathon.Application do
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec
+    #ElixirLinter.Runner.run(Learnathon.Repo)
 
     # Define workers and child supervisors to be supervised
     children = [
