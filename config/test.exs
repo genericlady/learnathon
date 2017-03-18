@@ -17,3 +17,6 @@ config :learnathon, Learnathon.Repo,
   database: "learnathon_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :learnathon, Learnathon.Mailer,
+  adapter: Bamboo.TestAdapter

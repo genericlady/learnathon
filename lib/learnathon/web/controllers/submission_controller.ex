@@ -1,11 +1,15 @@
 defmodule Learnathon.Web.SubmissionController do
+  alias Learnathon.{Person, Repo, Email, Mailer}
   use Learnathon.Web, :controller
-  alias Learnathon.{Person, Repo}
 
   def create(conn, %{"submission" => submission}) do
+  # Use `deliver_later` to deliver the email in the background
+  # if it errors it won't bring down the app. It's also a little faster
+  # you can create a strategy with Bamboo.DeliverLaterStrategy
+  #
     case create_person(conn, submission) do
-    {:ok, _person} ->
-      Learnathon.Mailer.send_welcome_text_email(_person.email)
+    {:ok, person} ->
+      Email.welcome_email(person) |> Mailer.deliver_later
       conn
       |> put_flash(:info, thank_you_message())
       |> redirect(to: page_path(conn, :index))

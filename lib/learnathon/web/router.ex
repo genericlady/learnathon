@@ -1,5 +1,10 @@
 defmodule Learnathon.Web.Router do
   use Learnathon.Web, :router
+  use Phoenix.Router
+
+  if Mix.env == :dev do
+    forward "/sent_emails", Bamboo.EmailPreviewPlug
+  end
 
   pipeline :browser do
     plug :accepts, ["html"]

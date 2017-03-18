@@ -3,7 +3,9 @@ defmodule Learnathon.Mailer do
           key: Application.get_env(:learnathon, :mailgun_key)
           # mode: :test, # Alternatively use Mix.env while in the test environment.
           # test_file_path: "/tmp/mailgun.json"
+
   use Mailgun.Client, @config
+  use Bamboo.Mailer, otp_app: :learnathon
 
   @from "submissions@learnathon.nyc"
 
