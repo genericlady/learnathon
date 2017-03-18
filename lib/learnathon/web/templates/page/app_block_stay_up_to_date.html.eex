@@ -23,7 +23,7 @@
               <%= text_input form, :name, 
                   [class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
                   placeholder: "Name"] %>
-              <%= text_input form, :email, 
+              <%= email_input form, :email, 
                   [class: "form-control-lg h4 text-ribbon-input text-ribbon-primary",
                   placeholder: "Email"] %>
               <%= submit "We will let you know when tickets become available.", 

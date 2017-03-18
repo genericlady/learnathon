@@ -8,9 +8,9 @@
           [class: "form-control", placeholder: "Name"] %>
         <%= text_input form, :company, 
           [class: "form-control", placeholder: "Company"] %>
-        <%= text_input form, :email, 
+        <%= email_input form, :email, 
           [class: "form-control", placeholder: "Email"]  %>
-        <%= text_input form, :workshop_idea, 
+        <%= textarea form, :workshop_idea, 
           [class: "form-control", placeholder: "Workshop Idea"]  %>
         <%= text_input form, :time_needed, 
           [class: "form-control", placeholder: "Time Needed (45m - 90m blocks available)"]  %>
