@@ -22,4 +22,22 @@ defmodule Learnathon.ConfirmationCode do
       |> Base.url_encode64
       |> binary_part(0, 64)
   end
+
+  def expired?(confirmation_code) do
+    age_in_seconds(confirmation_code) < negative_fifteen_minutes_in_seconds
+  end
+
+  defp negative_fifteen_minutes_in_seconds do
+    -(15 * 60)
+  end
+
+  defp age_in_seconds(confirmation_code) do
+    confirmation_code.
+      inserted_at
+      |> NaiveDateTime.diff(time_now(), :second)
+  end
+
+  defp time_now do
+    DateTime.utc_now |> DateTime.to_naive
+  end
 end

@@ -52,6 +52,7 @@ defmodule Learnathon.Mixfile do
       {:poison, "~> 2.1", override: true},
       {:elixir_linter, "~> 0.1.0"},
       {:bamboo, github: "thoughtbot/bamboo"},
+      {:ex_machina, "~> 2.0", only: :test},
     ]
   end
 
