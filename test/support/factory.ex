@@ -25,7 +25,6 @@ defmodule Learnathon.Factory do
     }
   end
 
-
   defp sixteen_minutes_from_now do
     NaiveDateTime.add(time_now(), -(60 * 16), :second)
   end

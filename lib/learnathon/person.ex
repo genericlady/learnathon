@@ -13,6 +13,7 @@ defmodule Learnathon.Person do
     field :time_needed, :string
     field :company, :string
     field :contribution, :integer
+    field :confirmed, :boolean
   end
 
   def changeset(person, params \\ %{}) do
@@ -20,7 +21,12 @@ defmodule Learnathon.Person do
     |> Changeset.cast(params, permitted_attributes())
     |> Changeset.validate_required([:name, :email])
     |> Changeset.unique_constraint(:email)
-    |> Changeset.validate_format(:email, ~r/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
+    |> Changeset.validate_format(:email, email_format_regex())
+  end
+
+  def confirmed?(person) do
+    IO.inspect person
+    person.confirmed == true
   end
 
   def new(attributes) do
@@ -29,6 +35,11 @@ defmodule Learnathon.Person do
 
   defp permitted_attributes do
     [:name, :email, :workshop_idea, :time_needed, :company, :contribution, 
-     :donation, :swag, :prizes]
+     :donation, :swag, :prizes, :confirmed]
   end
+
+  defp email_format_regex do
+    ~r/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
+  end
+
 end
