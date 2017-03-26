@@ -7,7 +7,9 @@ config :learnathon, Learnathon.Web.Endpoint,
   server: false
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger,
+  level: :debug,
+  compile_time_purge_level: :debug
 
 # Configure your database
 config :learnathon, Learnathon.Repo,
