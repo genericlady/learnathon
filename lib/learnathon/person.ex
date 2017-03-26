@@ -1,5 +1,5 @@
 defmodule Learnathon.Person do
-  use Ecto.Schema
+  use Learnathon.Web, :model
   alias Ecto.Changeset
   alias Learnathon.Person
 

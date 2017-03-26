@@ -1,5 +1,5 @@
 defmodule Learnathon.Web.SubmissionController do
-  alias Learnathon.{Person, Repo, Email, Mailer}
+  alias Learnathon.{Person, Repo, Email, Mailer, ConfirmationCode}
   use Learnathon.Web, :controller
 
   def create(conn, %{"submission" => submission}) do
@@ -20,6 +20,37 @@ defmodule Learnathon.Web.SubmissionController do
     end
   end
 
+  def update(conn, %{"confirmation_code" => confirmation_code}) do
+
+    cc = case Repo.get_by ConfirmationCode, body: confirmation_code.body do
+      nil -> 
+        conn
+        |> put_flash(:error, confirmation_code_not_found()) 
+        |> redirect(to: page_path(conn, :index))
+      cc -> cc
+    end
+
+    person = case ConfirmationCode.expired?(cc) do
+      person -> Repo.get_by(Person, email: cc.email)
+      :true -> 
+        conn
+        |> put_flash(:error, "Confirmation Code has expired") 
+        |> redirect(to: page_path(conn, :index))
+    end
+
+    changeset = Person.changeset(person, %{confirmed: true})
+    case Repo.update(changeset) do
+      {:ok, _person} ->
+        conn
+        |> put_flash(:success, "You have been confirmed! Thank you!")
+        |> redirect(to: page_path(conn, :index))
+      {:error, changeset} ->
+        conn
+        |> put_flash(:error, something_went_wrong())
+        |> redirect(to: page_path(conn, :index))
+    end
+  end
+
   defp create_person(conn, attributes) do
     Repo.insert Person.new(attributes)
   end
@@ -31,5 +62,19 @@ defmodule Learnathon.Web.SubmissionController do
   defp error_message do
     "There was an error, try again. If you're trying to update your submission 
     please reach out to us ( submissions at learnathon.nyc )"
+  end
+
+  defp confirmation_code_not_found do
+    """
+    Confirmation Code could not be found. It may be expired. Please try your 
+    submission again.
+    """
+  end
+
+  defp something_went_wrong do
+    """
+    Sorry, something went wrong when you tried to confirm your email. Please 
+    contact admin@learnathon.nyc
+    """
   end
 end

@@ -1,4 +1,5 @@
 defmodule Learnathon.PersonTest do
+  import Learnathon.Factory
   use Learnathon.ModelCase
 
   alias Learnathon.Person
@@ -14,5 +15,12 @@ defmodule Learnathon.PersonTest do
   test "changeset with invalid attributes" do
     changeset = Person.changeset(%Person{}, @invalid_attrs)
     refute changeset.valid?
+  end
+
+  test "has the ability to know if it's confirmed?" do
+    attrs = %{name: "foo", email: "cheese@gmail.com", confirmed: true}
+    person = build(:person, attrs)
+
+    assert Person.confirmed?(person) == true
   end
 end

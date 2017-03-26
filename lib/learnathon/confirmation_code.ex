@@ -1,5 +1,5 @@
 defmodule Learnathon.ConfirmationCode do
-  use Ecto.Schema
+  use Learnathon.Web, :model
   alias Ecto.Changeset
 
   schema "confirmation_codes" do
