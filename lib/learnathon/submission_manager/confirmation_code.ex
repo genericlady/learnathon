@@ -1,19 +1,20 @@
-defmodule Learnathon.ConfirmationCode do
+defmodule Learnathon.SubmissionManager.ConfirmationCode do
   use Learnathon.Web, :model
   alias Ecto.Changeset
 
   schema "confirmation_codes" do
     field :body, :string
     field :email, :string
+    belongs_to :person, Learnathon.SubmissionManager.Person
 
     timestamps()
   end
 
   def changeset(struct, params \\ %{}) do
     struct
-    |> Changeset.cast(params, [:email, :body])
-    |> Changeset.validate_required([:email, :body])
-    |> Changeset.unique_constraint(:email)
+    |> cast(params, [:email, :body, :person_id])
+    |> put_assoc(:person, required: true)
+    |> validate_required([:body])
   end
 
   def generate do

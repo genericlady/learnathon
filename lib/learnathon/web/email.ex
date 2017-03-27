@@ -1,6 +1,7 @@
 defmodule Learnathon.Email do
   import Bamboo.Email
   import Bamboo.Phoenix
+  alias Learnathon.SubmissionManager.Person
 
   # For Mass Mail see Handling Receipients
   # https://github.com/thoughtbot/bamboo#handling-recipients
@@ -14,12 +15,12 @@ defmodule Learnathon.Email do
     |> text_body(welcome_plain())
   end
 
-  def confirmation_email(person) do
+  def confirmation_email(person, conn) do
     base_email()
     |> to(person.email)
     |> subject("Please confirm your email address for learnathon.nyc!")
     |> put_header("Reply-To", "submissions@learnathon.nyc")
-    |> html_body(confirmation_html())
+    |> html_body(confirmation_html(person, conn))
     |> text_body(confirmation_plain())
   end
 
@@ -47,8 +48,14 @@ defmodule Learnathon.Email do
     present_email_template("welcome_plain")
   end
 
-  defp confirmation_html do
-    present_email_template("confirmation")
+  defp confirmation_html(person, conn) do
+    confirmation_code = Person.last_created_confirmation_code(person)
+    Phoenix.View.
+      render_to_string(
+        Learnathon.EmailView, 
+        "confirmation.html",
+        conn: conn,
+        cc: confirmation_code.body)
   end
 
   defp confirmation_plain do

@@ -22,6 +22,7 @@ defmodule Learnathon.Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/submission", SubmissionController, :confirm
     post "/submission", SubmissionController, :create
     put "/submission", SubmissionController, :update
   end

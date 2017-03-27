@@ -2,7 +2,7 @@ defmodule Learnathon.PersonTest do
   import Learnathon.Factory
   use Learnathon.ModelCase
 
-  alias Learnathon.Person
+  alias Learnathon.SubmissionManager.Person
   
   @valid_attrs %{name: "foo", email: "cheese@gmail.com"}
   @invalid_attrs %{name: "foo", email: "chee"}

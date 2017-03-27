@@ -1,10 +1,12 @@
 defmodule Learnathon.EmailTest do
   use ExUnit.Case
+  use Learnathon.Web.ConnCase
   use Bamboo.Test, shared: true
-  alias Learnathon.{Person, Email, Mailer}
+  alias Learnathon.{Email, Mailer}
+  import Learnathon.Factory
 
   test "welcome email" do
-    person = %Person{name: "John", email: "person@example.com"}
+    person = build(:person)
 
     email = Email.welcome_email(person)
 
@@ -13,19 +15,21 @@ defmodule Learnathon.EmailTest do
     assert email.html_body =~ "Welcome to learnathon.nyc!"
   end
 
-  test "confirmation email" do
-    person = %Person{name: "John", email: "person@example.com"}
+  test "confirmation email", %{conn: conn} do
+    person = build(:person)
 
-    email = Email.confirmation_email(person)
+    email = Email.confirmation_email(person, conn)
+    cc = Learnathon.
+          SubmissionManager.Person.last_created_confirmation_code(person)
 
     assert email.to == person.email
     assert email.
             subject =~ "Please confirm your email address for learnathon.nyc!"
-    assert email.html_body =~ "https://learnathon.nyc/confirm"
+    assert email.html_body =~ cc.body
   end
 
   test "confirmation success email" do
-    person = %Person{name: "John", email: "person@example.com"}
+    person = build(:person)
 
     email = Email.confirmation_success(person)
 
@@ -34,10 +38,10 @@ defmodule Learnathon.EmailTest do
     assert email.html_body =~ "Thanks for confirming your email!"
   end
 
-  test "after registering, the person gets a confirmation email" do
-    person = %Person{name: "John", email: "person@example.com"}
-    Email.confirmation_email(person) |> Mailer.deliver_later
+  test "after registering, the person gets a confirmation email", %{conn: conn} do
+    person = build(:person)
+    Email.confirmation_email(person, conn) |> Mailer.deliver_later
 
-    assert_delivered_email Email.confirmation_email(person)
+    assert_delivered_email Email.confirmation_email(person, conn)
   end
 end

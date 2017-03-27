@@ -1,8 +1,16 @@
 defmodule Learnathon.Factory do
   use ExMachina.Ecto, repo: Learnathon.Repo
-  alias Learnathon.{Person, ConfirmationCode}
+  alias Learnathon.{SubmissionManager.Person, SubmissionManager.ConfirmationCode}
 
   def person_factory do
+    %Person{
+      name: "Johnny Appleseed",
+      email: sequence(:email, &"email-#{&1}@example.com"),
+      confirmation_codes: [build(:confirmation_code)],
+    }
+  end
+
+  def person_no_code_factory do
     %Person{
       name: "Johnny Appleseed",
       email: sequence(:email, &"email-#{&1}@example.com"),
@@ -13,7 +21,6 @@ defmodule Learnathon.Factory do
     %ConfirmationCode{
       body: ConfirmationCode.generate,
       inserted_at: time_now(),
-      email: sequence(:email, &"email-#{&1}@example.com"),
     }
   end
 
@@ -21,7 +28,6 @@ defmodule Learnathon.Factory do
     %ConfirmationCode{
       body: ConfirmationCode.generate,
       inserted_at: sixteen_minutes_from_now(),
-      email: sequence(:email, &"email-#{&1}@example.com"),
     }
   end
 

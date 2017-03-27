@@ -2,19 +2,13 @@ defmodule Learnathon.ConfirmationCodeTest do
   use Learnathon.ModelCase
   import Learnathon.Factory
 
-  alias Learnathon.ConfirmationCode
+  alias Learnathon.SubmissionManager.ConfirmationCode
 
-  @valid_attrs %{body: ConfirmationCode.generate, email: "franny@gmail.com"}
-  @invalid_attrs %{body: "{&*!@#$)"}
+  @valid_attrs %{body: ConfirmationCode.generate}
 
   test "changeset with valid attributes" do
     changeset = ConfirmationCode.changeset(%ConfirmationCode{}, @valid_attrs)
     assert changeset.valid?
-  end
-
-  test "changeset with invalid attributes" do
-    changeset = ConfirmationCode.changeset(%ConfirmationCode{}, @invalid_attrs)
-    refute changeset.valid?
   end
 
   test "if younger than 15 minutes expired? returns false" do

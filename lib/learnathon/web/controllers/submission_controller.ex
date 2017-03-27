@@ -1,62 +1,110 @@
 defmodule Learnathon.Web.SubmissionController do
-  alias Learnathon.{Person, Repo, Email, Mailer, ConfirmationCode}
+  alias Learnathon.{
+          SubmissionManager.Person,
+          SubmissionManager.ConfirmationCode,
+          Repo, 
+          Email, 
+          Mailer 
+        }
+
   use Learnathon.Web, :controller
 
   def create(conn, %{"submission" => submission}) do
-  # Use `deliver_later` to deliver the email in the background
-  # if it errors it won't bring down the app. It's also a little faster
-  # you can create a strategy with Bamboo.DeliverLaterStrategy
-  #
-    case create_person(submission) do
-    {:ok, person} ->
-      Email.welcome_email(person) |> Mailer.deliver_later
+    changeset = Person.changeset(%Person{}, submission)
+
+    if changeset.valid? do
+      person = get_or_insert_person(changeset, conn)
+    else
       conn
-      |> put_flash(:info, thank_you_message())
-      |> redirect(to: page_path(conn, :index))
-    {:error, _person} ->
-      conn
-      |> put_flash(:error, error_message())
+      |> put_flash(:errors, changeset.errors)
       |> redirect(to: page_path(conn, :index))
     end
+
+    case person.confirmed do
+      true ->
+        conn
+        |> put_flash(:info, "You are already confirmed.")
+        |> redirect(to: page_path(conn, :index))
+    end
+
+    confirmation_code_transaction = Repo.transaction fn ->
+      Ecto.
+      build_assoc(person, 
+        :confirmation_codes, 
+        body: ConfirmationCode.generate())
+      |> Repo.insert!
+    end
+
+    email_confirmation_code(Repo.preload(person, :confirmation_codes), conn)
+    conn
+    |> put_flash(:info, "Check your email for a confirmation message.")
+    |> redirect(to: page_path(conn, :index))
+  end
+
+  def confirm(conn, _params) do
+    update conn, %{"confirmation_code" => _params["confirmation_code"]["body"]}
   end
 
   def update(conn, %{"confirmation_code" => confirmation_code}) do
-    cc = case Repo.get_by ConfirmationCode, body: confirmation_code.body do
+    # confirmation code should have validation
+    # should always be a specific length
+    # maybe log peoples ip so people who abuse it can be black listed
+    #
+    cc = case Repo.get_by ConfirmationCode, body: confirmation_code do
       nil -> 
         conn
         |> put_flash(:error, confirmation_code_not_found()) 
         |> redirect(to: page_path(conn, :index))
       cc -> cc
-      _ -> 
-        conn
-        |> put_flash(:error, confirmation_code_not_found()) 
-        |> redirect(to: page_path(conn, :index))
     end
 
-    person = case ConfirmationCode.expired?(cc) do
-      :true -> 
-        conn
-        |> put_flash(:error, "Confirmation Code has expired") 
-        |> redirect(to: page_path(conn, :index))
-      _ -> Repo.get_by(Person, email: cc.email)
-    end
-
+    person = Repo.get_by Person, id: cc.person_id
+    person = Repo.preload person, :confirmation_codes
     Repo.delete!(cc)
-    changeset = Person.changeset(person, %{confirmed: true})
-    case Repo.update(changeset) do
+
+    case confirm(person) do
       {:ok, _person} ->
         conn
-        |> put_flash(:success, "You have been confirmed! Thank you!")
+        |> put_flash(:info, "You have been confirmed! Thank you!")
         |> redirect(to: page_path(conn, :index))
       {:error, _} ->
         conn
         |> put_flash(:error, something_went_wrong())
         |> redirect(to: page_path(conn, :index))
     end
+
   end
 
-  defp create_person(attributes) do
-    Repo.insert Person.new(attributes)
+  defp confirm(person) do
+    changeset = Person.changeset(person, %{confirmed: true})
+    Email.confirmation_success(person) |> Mailer.deliver_later
+    Repo.update(changeset)
+  end
+
+  defp email_confirmation_code(person, conn)do
+    Email.confirmation_email(person, conn)
+    |> Mailer.deliver_later
+  end
+
+  defp get_or_insert_person(changeset, conn) do
+    case Repo.get_by(Person, email: changeset.changes.email) do
+      nil -> insert_or_redirect_person(changeset, conn)
+      person -> person
+    end
+  end
+
+  defp insert_or_redirect_person(changeset, conn) do
+    case Repo.insert(changeset) do
+      {:error, changeset} -> 
+        conn
+        |> put_flash(:errors, changeset.errors)
+        |> redirect(to: page_path(conn, :index))
+      {:ok, person} -> person
+    end
+  end
+
+  defp changeset_contains_email?(changeset) do
+    Map.has_key?(changeset, :email)
   end
 
   defp thank_you_message do
