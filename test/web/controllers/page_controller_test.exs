@@ -5,4 +5,5 @@ defmodule Learnathon.Web.PageControllerTest do
     conn = get conn, "/"
     assert html_response(conn, 200) =~ "NYC Learnathon Summer 2017"
   end
+
 end

@@ -25,6 +25,16 @@ defmodule Learnathon.Web do
     end
   end
 
+  def model do
+    quote do
+      use Ecto.Schema
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+    end
+  end
+
   def view do
     quote do
       use Phoenix.View, root: "lib/learnathon/web/templates",

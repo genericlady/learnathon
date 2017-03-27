@@ -23,6 +23,7 @@ defmodule Learnathon.Web.Router do
 
     get "/", PageController, :index
     post "/submission", SubmissionController, :create
+    put "/submission", SubmissionController, :update
   end
 
   # Other scopes may use custom stacks.

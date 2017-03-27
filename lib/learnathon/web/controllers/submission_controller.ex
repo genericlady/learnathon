@@ -7,7 +7,7 @@ defmodule Learnathon.Web.SubmissionController do
   # if it errors it won't bring down the app. It's also a little faster
   # you can create a strategy with Bamboo.DeliverLaterStrategy
   #
-    case create_person(conn, submission) do
+    case create_person(submission) do
     {:ok, person} ->
       Email.welcome_email(person) |> Mailer.deliver_later
       conn
@@ -21,37 +21,41 @@ defmodule Learnathon.Web.SubmissionController do
   end
 
   def update(conn, %{"confirmation_code" => confirmation_code}) do
-
     cc = case Repo.get_by ConfirmationCode, body: confirmation_code.body do
       nil -> 
         conn
         |> put_flash(:error, confirmation_code_not_found()) 
         |> redirect(to: page_path(conn, :index))
       cc -> cc
+      _ -> 
+        conn
+        |> put_flash(:error, confirmation_code_not_found()) 
+        |> redirect(to: page_path(conn, :index))
     end
 
     person = case ConfirmationCode.expired?(cc) do
-      person -> Repo.get_by(Person, email: cc.email)
       :true -> 
         conn
         |> put_flash(:error, "Confirmation Code has expired") 
         |> redirect(to: page_path(conn, :index))
+      _ -> Repo.get_by(Person, email: cc.email)
     end
 
+    Repo.delete!(cc)
     changeset = Person.changeset(person, %{confirmed: true})
     case Repo.update(changeset) do
       {:ok, _person} ->
         conn
         |> put_flash(:success, "You have been confirmed! Thank you!")
         |> redirect(to: page_path(conn, :index))
-      {:error, changeset} ->
+      {:error, _} ->
         conn
         |> put_flash(:error, something_went_wrong())
         |> redirect(to: page_path(conn, :index))
     end
   end
 
-  defp create_person(conn, attributes) do
+  defp create_person(attributes) do
     Repo.insert Person.new(attributes)
   end
 
