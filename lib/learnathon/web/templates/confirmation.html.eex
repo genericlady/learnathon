@@ -2,7 +2,7 @@
 
 <%= form_for @conn, 
       submission_path(@conn, :confirm), 
-      [name: :confirmation_code, value: @cc, method: :get], fn f -> %>
+      [as: :confirmation_code, value: @cc, method: :get], fn f -> %>
   <%= text_input f, :body, value: @cc %>
   <%= submit "Click here to confirm" %>
 <% end %>
