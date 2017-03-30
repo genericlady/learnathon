@@ -25,6 +25,7 @@ defmodule Learnathon.Web.SubmissionController do
         conn
         |> put_flash(:info, "You are already confirmed.")
         |> redirect(to: page_path(conn, :index))
+      _ -> false
     end
 
     confirmation_code_transaction = Repo.transaction fn ->
