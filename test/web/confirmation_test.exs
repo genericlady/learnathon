@@ -21,8 +21,7 @@ defmodule Learnathon.Confirmation do
   test "After confirmation the person gets a thank you email.", %{conn: conn} do
     person = insert(:person)
     cc = Person.last_created_confirmation_code(person)
-    conn = put(conn, submission_path(conn, :update), 
-            confirmation_code: cc.body )
+    put(conn, submission_path(conn, :update), confirmation_code: cc.body)
 
     assert_delivered_email Learnathon.Email.confirmation_success(person)
   end

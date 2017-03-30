@@ -9,8 +9,6 @@ defmodule Learnathon.SubmissionManagerTest do
   @update_attrs %{confirmed: true}
   @invalid_attrs %{name: nil, email: nil}
 
-  @workshop_attrs %{workshop_idea: "paper airplanes!"}
-
   test "list_people/1 returns all people" do
     person = insert(:person_no_code)
     assert SubmissionManager.list_people() == [person]
@@ -22,8 +20,7 @@ defmodule Learnathon.SubmissionManagerTest do
   end
 
   test "create_person/1 with valid data creates a person." do
-    assert {:ok, %Person{} = person} = 
-      SubmissionManager.create_person(@create_attrs)
+    assert {:ok, %Person{}} = SubmissionManager.create_person(@create_attrs)
   end
 
   test "create_person/1 with invalid data returns error changeset." do

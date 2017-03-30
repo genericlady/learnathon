@@ -36,7 +36,8 @@ defmodule Learnathon.Web.SubmissionController do
       |> Repo.insert!
     end
 
-    email_confirmation_code(Repo.preload(person, :confirmation_codes), conn)
+    IO.puts "+++++++++++++++++"
+    IO.inspect email_confirmation_code(Repo.preload(person, :confirmation_codes), conn)
     conn
     |> put_flash(:info, "Check your email for a confirmation message.")
     |> redirect(to: page_path(conn, :index))
@@ -78,13 +79,13 @@ defmodule Learnathon.Web.SubmissionController do
 
   defp confirm(person) do
     changeset = Person.changeset(person, %{confirmed: true})
-    Email.confirmation_success(person) |> Mailer.deliver_later
+    Email.confirmation_success(person) |> Mailer.deliver_now
     Repo.update(changeset)
   end
 
   defp email_confirmation_code(person, conn)do
     Email.confirmation_email(person, conn)
-    |> Mailer.deliver_later
+    |> Mailer.deliver_now
   end
 
   defp get_or_insert_person(changeset, conn) do
