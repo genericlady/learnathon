@@ -1,6 +1,5 @@
 defmodule Learnathon.SubmissionManager.ConfirmationCode do
   use Learnathon.Web, :model
-  alias Ecto.Changeset
 
   schema "confirmation_codes" do
     field :body, :string

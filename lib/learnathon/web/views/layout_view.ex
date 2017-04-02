@@ -14,7 +14,7 @@ defmodule Learnathon.Web.LayoutView do
   end
 
   def flash_msg(%{"errors" => errors}) do
-    messages = Enum.map(errors, fn({k, v}) -> 
+    Enum.map(errors, fn({k, v}) -> 
       {msg, _} = v
       ~E"<ul class='alert alert-danger-text text-center p-0 m-0'>
            <%= k %> <%= msg %>

@@ -2,10 +2,6 @@ use Mix.Config
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
-#
-# The watchers configuration can be used to run external
-# watchers to your application. For example, we use it
-# with brunch.io to recompile .js and .css sources.
 config :learnathon, Learnathon.Web.Endpoint,
   http: [port: 4000],
   debug_errors: true,
@@ -13,6 +9,9 @@ config :learnathon, Learnathon.Web.Endpoint,
   check_origin: false,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
                     cd: Path.expand("../assets", __DIR__)]]
+
+config :learnathon, Learnathon.Mailer,
+  adapter: Bamboo.LocalAdapter
 
 # ## SSL Support
 #

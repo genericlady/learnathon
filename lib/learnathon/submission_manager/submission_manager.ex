@@ -215,7 +215,7 @@ defmodule Learnathon.SubmissionManager do
     get_person(person_id)
   end
 
-  def delete_all_confirmation_codes_for_person(person_id, codes, n) do
+  def delete_all_confirmation_codes_for_person(person_id, codes, _) do
     [confirmation_code | codes] = codes
     Repo.delete!(confirmation_code)
     delete_all_confirmation_codes_for_person(person_id, codes, length(codes))
