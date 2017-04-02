@@ -97,10 +97,4 @@ defmodule Learnathon.SubmissionManagerTest do
     assert person == SubmissionManager.get_person!(person.id)
   end
 
-  test "create_confirmation_code/1 with valid data creates a confirmation code" do
-  end
-
-  test "delete_confirmation_code/1 deletes the confirmation_code" do
-  end
-
 end

@@ -1,7 +1,6 @@
 defmodule Learnathon.Email do
   import Bamboo.Email
   import Bamboo.Phoenix
-  alias Learnathon.SubmissionManager.Person
 
   # For Mass Mail see Handling Receipients
   # https://github.com/thoughtbot/bamboo#handling-recipients
