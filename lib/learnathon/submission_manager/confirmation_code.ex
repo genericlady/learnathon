@@ -10,18 +10,11 @@ defmodule Learnathon.SubmissionManager.ConfirmationCode do
     timestamps()
   end
 
-  def changeset(struct, params \\ %{}) do
-    struct
+  def changeset(confirmation_code, params \\ %{}) do
+    confirmation_code
     |> cast(params, [:email, :body, :person_id])
     |> put_assoc(:person, required: true)
     |> validate_required([:body])
-  end
-
-  def generate do
-    :crypto.
-      strong_rand_bytes(64)
-      |> Base.url_encode64
-      |> binary_part(0, 64)
   end
 
   def expired?(confirmation_code) do

@@ -2,7 +2,11 @@ defmodule Learnathon.EmailTest do
   use ExUnit.Case
   use Learnathon.Web.ConnCase
   use Bamboo.Test, shared: true
-  alias Learnathon.{Email, Mailer}
+  alias Learnathon.{
+                     SubmissionManager,
+                     Email, 
+                     Mailer }
+
   import Learnathon.Factory
 
   test "welcome email" do
@@ -17,10 +21,8 @@ defmodule Learnathon.EmailTest do
 
   test "confirmation email", %{conn: conn} do
     person = build(:person)
-
-    email = Email.confirmation_email(person, conn)
-    cc = Learnathon.
-          SubmissionManager.Person.last_created_confirmation_code(person)
+    cc = SubmissionManager.last_created_confirmation_code(person)
+    email = Email.confirmation_email(person, cc, conn)
 
     assert email.to == person.email
     assert email.
@@ -40,8 +42,9 @@ defmodule Learnathon.EmailTest do
 
   test "after registering, the person gets a confirmation email", %{conn: conn} do
     person = build(:person)
-    Email.confirmation_email(person, conn) |> Mailer.deliver_later
+    cc = SubmissionManager.last_created_confirmation_code(person)
+    Email.confirmation_email(person, cc, conn) |> Mailer.deliver_later
 
-    assert_delivered_email Email.confirmation_email(person, conn)
+    assert_delivered_email Email.confirmation_email(person, cc, conn)
   end
 end

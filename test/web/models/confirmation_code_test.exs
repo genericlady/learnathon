@@ -2,9 +2,11 @@ defmodule Learnathon.ConfirmationCodeTest do
   use Learnathon.ModelCase
   import Learnathon.Factory
 
-  alias Learnathon.SubmissionManager.ConfirmationCode
+  alias Learnathon.{
+                     SubmissionManager,
+                     SubmissionManager.ConfirmationCode, }
 
-  @valid_attrs %{body: ConfirmationCode.generate}
+  @valid_attrs %{body: SubmissionManager.generate_hash}
 
   test "changeset with valid attributes" do
     changeset = ConfirmationCode.changeset(%ConfirmationCode{}, @valid_attrs)

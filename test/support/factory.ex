@@ -1,6 +1,9 @@
 defmodule Learnathon.Factory do
   use ExMachina.Ecto, repo: Learnathon.Repo
-  alias Learnathon.{SubmissionManager.Person, SubmissionManager.ConfirmationCode}
+  alias Learnathon.{
+                     SubmissionManager,
+                     SubmissionManager.Person,
+                     SubmissionManager.ConfirmationCode }
 
   def person_factory do
     %Person{
@@ -19,14 +22,14 @@ defmodule Learnathon.Factory do
 
   def confirmation_code_factory do
     %ConfirmationCode{
-      body: ConfirmationCode.generate,
+      body: SubmissionManager.generate_hash(),
       inserted_at: time_now(),
     }
   end
 
   def expired_confirmation_code_factory do
     %ConfirmationCode{
-      body: ConfirmationCode.generate,
+      body: SubmissionManager.generate_hash(),
       inserted_at: sixteen_minutes_from_now(),
     }
   end

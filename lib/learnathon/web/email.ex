@@ -15,12 +15,12 @@ defmodule Learnathon.Email do
     |> text_body(welcome_plain())
   end
 
-  def confirmation_email(person, conn) do
+  def confirmation_email(person, confirmation, conn) do
     base_email()
     |> to(person.email)
     |> subject("Please confirm your email address for learnathon.nyc!")
     |> put_header("Reply-To", "submissions@learnathon.nyc")
-    |> html_body(confirmation_html(person, conn))
+    |> html_body(confirmation_html(confirmation, conn))
     |> text_body(confirmation_plain())
   end
 
@@ -48,14 +48,13 @@ defmodule Learnathon.Email do
     present_email_template("welcome_plain")
   end
 
-  defp confirmation_html(person, conn) do
-    confirmation_code = Person.last_created_confirmation_code(person)
+  defp confirmation_html(confirmation, conn) do
     Phoenix.View.
       render_to_string(
         Learnathon.EmailView, 
         "confirmation.html",
         conn: conn,
-        cc: confirmation_code.body)
+        cc: confirmation.body)
   end
 
   defp confirmation_plain do
