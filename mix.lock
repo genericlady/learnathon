@@ -1,4 +1,4 @@
-%{"bamboo": {:git, "https://github.com/thoughtbot/bamboo.git", "014bdecf271ecd290ef7805a9081ae0c0f0b70cc", []},
+%{"bamboo": {:hex, :bamboo, "0.8.0", "573889a3efcb906bb9d25a1c4caa4ca22f479235e1b8cc3260d8b88dabeb4b14", [:mix], [{:hackney, "~> 1.6", [hex: :hackney, optional: false]}, {:plug, "~> 1.0", [hex: :plug, optional: false]}, {:poison, ">= 1.5.0", [hex: :poison, optional: false]}]},
   "bamboo_sparkpost": {:hex, :bamboo_sparkpost, "0.5.1", "cae2083a37afe5653355c28391540995d0c0175d5837d0bb4eb6cc95160dac39", [:mix], [{:bamboo, "~> 0.5", [hex: :bamboo, optional: false]}]},
   "bunt": {:hex, :bunt, "0.2.0", "951c6e801e8b1d2cbe58ebbd3e616a869061ddadcc4863d0a2182541acae9a38", [:mix], []},
   "calendar": {:hex, :calendar, "0.16.1", "782327ad8bae7c797b887840dc4ddb933f05ce6e333e5b04964d7a5d5f79bde3", [:mix], [{:tzdata, "~> 0.5.8 or ~> 0.1.201603", [hex: :tzdata, optional: false]}]},

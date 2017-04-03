@@ -1,10 +1,18 @@
-.alert-info-text { color: yellow; }
-.alert-danger-text { color: red; }
+ul.alert {font-size: 1.33337rem !important;}
+.alert-info-text {
+  color: yellow;
+  font-size: 1.33337rem !important;
+}
+.alert-danger-text { 
+  color: red; 
+  font-size: 1.33337rem !important;
+}
 #sponsorOptionLabel { color: white !important; }
 .live-streaming-iframe {
   width: 682px;
   height: 384px;
 }
+
 @media (max-width: 767px) {
   .live-streaming-iframe {
     width: 320px;
@@ -18,3 +26,7 @@
 }
 
 button { white-space: normal !important; }
+
+.ticket-iframe {
+  height: 23rem; 
+}

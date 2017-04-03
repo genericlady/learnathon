@@ -52,11 +52,10 @@ defmodule Learnathon.Mixfile do
       {:mailgun, "~> 0.1.2"},
       {:poison, "~> 2.1", override: true},
       {:elixir_linter, "~> 0.1.0"},
-      {:bamboo, github: "thoughtbot/bamboo", override: true},
       {:ex_machina, "~> 2.0", only: :test},
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
       {:sparkpost, "~> 0.3.0"},
-      {:bamboo_sparkpost, "~> 0.5.0"},
+      {:bamboo_sparkpost, "~> 0.5.0", override: true},
     ]
   end
 

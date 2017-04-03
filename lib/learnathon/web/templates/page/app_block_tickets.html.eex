@@ -24,16 +24,12 @@
           <div class="card accent-primary">
             <div class="card-block">
               <h3 class="card-title">Day One</h3>
-              <h4 class="text-primary text-serif mt-0 mb-3">
-                <em>June 24th 9am - 5pm</em>
-              </h4>
               <p class="text-serif mb-1">
               <em>
                 Day one is full of workshops to watch and participate in.
               </em>
               </p>
-              <a href="#subscribe" class="btn btn-primary btn-square btn-block btn-lg">
-                Get your ticket</a>
+              <%= render "tickets_day_one.html" %>
             </div>
           </div>
         </div>
@@ -41,9 +37,6 @@
           <div class="card accent-primary">
             <div class="card-block">
               <h3 class="card-title">Day Two</h3>
-              <h4 class="text-primary text-serif mt-0 mb-3">
-                <em>June 25th 9am - 7pm</em>
-              </h4>
               <p class="text-serif mb-1">
               <em>
                 Day two is a hackathon where you get to use any Webstack to 
@@ -51,10 +44,17 @@
                 choose from.
               </em>
               </p>
-              <a href="#subscribe" class="btn btn-primary btn-square btn-block btn-lg">
-                Get your ticket</a>
+
+              <%= render "tickets_day_two.html" %>
             </div>
           </div>
+        </div>
+        <div class="col-12">
+          <h2 style="color: black !important; position: 0px;" 
+              class="text-ribbon text-ribbon-primary">
+            Looking for volunteers to run workshops!
+          </h2>
+          <%= render "workshop_form.html", %{conn: @conn} %>
         </div>
       </div>
     </div>

@@ -1,9 +1,5 @@
-<h1>Please confirm your email address for learnathon.nyc!</h1>
-
-<%= form_for @conn, 
-      submission_path(@conn, :confirm), 
-      [as: :confirmation_code, value: @cc, method: :get], fn f -> %>
-  <%= text_input f, :body, value: @cc %>
-  <%= submit "Click here to confirm" %>
-<% end %>
-
+<h3>
+  <a href="<%= submission_url(@conn, :confirm) %>?submission=<%= @cc %>">
+    Please confirm your email address for learnathon.nyc!
+  </a>
+</h3>

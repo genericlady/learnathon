@@ -11,7 +11,9 @@ config :learnathon, Learnathon.Web.Endpoint,
                     cd: Path.expand("../assets", __DIR__)]]
 
 config :learnathon, Learnathon.Mailer,
-  adapter: Bamboo.LocalAdapter
+       adapter: Bamboo.SparkPostAdapter,
+       api_key: System.get_env("SPARKPOST")
+       #adapter: Bamboo.LocalAdapter
 
 # ## SSL Support
 #

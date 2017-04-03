@@ -106,6 +106,7 @@ defmodule Learnathon.SubmissionManager do
   end
 
   @doc """
+  If changeset or map is invalid return changeset with errors.
   If person is found by email then return that Person.
   If person is not found create person.
 
@@ -114,12 +115,19 @@ defmodule Learnathon.SubmissionManager do
       iex> get_or_create_person(changeset)
       {:ok, %Person{name: "sam", email: "sam@gmail.com"}}
 
+      iex> get_or_create_person(%{foo: nil})
+      {:errors, changeset}
+
   """
   def get_or_create_person(submission) do
     changeset = person_changeset(%Person{}, submission)
-    case Repo.get_by(Person, email: changeset.changes.email) do
-      nil -> create_person(changeset.changes)
-      person -> {:ok, person}
+    if changeset.valid? do
+      case Repo.get_by(Person, email: changeset.changes.email) do
+        nil -> create_person(changeset.changes)
+        person -> {:ok, person}
+      end
+    else
+      {:errors, changeset}
     end
   end
 

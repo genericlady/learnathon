@@ -1,26 +1,45 @@
 defmodule Learnathon.Email do
   import Bamboo.Email
   import Bamboo.Phoenix
+  alias SparkPost.{Content, Transmission}
 
   # For Mass Mail see Handling Receipients
   # https://github.com/thoughtbot/bamboo#handling-recipients
   #
   def welcome_email(person) do
-    base_email()
-    |> to(person.email)
-    |> subject("Welcome to learnathon.nyc!")
-    |> put_header("Reply-To", "submissions@learnathon.nyc")
-    |> html_body(welcome_html())
-    |> text_body(welcome_plain())
+    Transmission.send(%Transmission{
+    recipients: [person.email],
+    content: %Content.Inline{
+    from: "submissions@learnathon.nyc",
+    subject: "Welcome to learnathon.nyc!",
+    html: welcome_html(),
+    text: welcome_plain()
+    }
+  })
+    # base_email()
+    # |> to(person.email)
+    # |> subject("Welcome to learnathon.nyc!")
+    # |> put_header("Reply-To", "submissions@learnathon.nyc")
+    # |> html_body(welcome_html())
+    # |> text_body(welcome_plain())
   end
 
   def confirmation_email(person, confirmation, conn) do
-    base_email()
-    |> to(person.email)
-    |> subject("Please confirm your email address for learnathon.nyc!")
-    |> put_header("Reply-To", "submissions@learnathon.nyc")
-    |> html_body(confirmation_html(confirmation, conn))
-    |> text_body(confirmation_plain())
+    Transmission.send(%Transmission{
+      recipients: [person.email],
+      content: %Content.Inline{
+      from: "submissions@learnathon.nyc",
+      subject: "Please confirm your email address for learnathon.nyc!",
+      html: confirmation_html(confirmation, conn),
+      text: confirmation_plain(confirmation, conn)
+      }
+    })
+    # base_email()
+    # |> to(person.email)
+    # |> subject("Please confirm your email address for learnathon.nyc!")
+    # |> put_header("Reply-To", "submissions@learnathon.nyc")
+    # |> html_body(confirmation_html(confirmation, conn))
+    # |> text_body(confirmation_plain())
   end
 
   def confirmation_success(person) do
@@ -56,8 +75,13 @@ defmodule Learnathon.Email do
         cc: confirmation.body)
   end
 
-  defp confirmation_plain do
-    present_email_template("confirmation_plain")
+  defp confirmation_plain(confirmation, conn) do
+    Phoenix.View.
+      render_to_string(
+        Learnathon.EmailView, 
+        "confirmation_plain.html",
+        conn: conn,
+        cc: confirmation.body)
   end
 
   defp confirmation_success_html do
