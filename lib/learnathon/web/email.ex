@@ -3,9 +3,15 @@ defmodule Learnathon.Email do
   import Bamboo.Phoenix
   alias SparkPost.{Content, Transmission}
 
-  # For Mass Mail see Handling Receipients
-  # https://github.com/thoughtbot/bamboo#handling-recipients
-  #
+  def bamboo_email_test do
+    base_email()
+    |> to("yianna@learnathon.nyc")
+    |> subject("Welcome to learnathon.nyc!")
+    |> put_header("Reply-To", "submissions@learnathon.nyc")
+    |> html_body(welcome_html())
+    |> text_body(welcome_plain())
+  end
+
   def welcome_email(person) do
     Transmission.send(%Transmission{
     recipients: [person.email],
