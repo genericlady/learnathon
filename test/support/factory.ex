@@ -1,9 +1,20 @@
 defmodule Learnathon.Factory do
   use ExMachina.Ecto, repo: Learnathon.Repo
   alias Learnathon.{
-                     SubmissionManager,
-                     SubmissionManager.Person,
-                     SubmissionManager.ConfirmationCode }
+    SubmissionManager,
+    SubmissionManager.ConfirmationCode,
+    SubmissionManager.Person,
+  }
+
+  def confirmed_person do
+    %Person{
+      name: "Rebecca Buck",
+      username: "TankGirl",
+      password: "123456",
+      email: "tankgirl@gmail.com",
+      confirmed: true,
+    }
+  end
 
   def person_factory do
     %Person{

@@ -57,6 +57,29 @@ defmodule Learnathon.SubmissionManager do
   def get_person(id), do: Repo.get(Person, id)
 
   @doc """
+  Fetches a person by id.
+
+  Returns `{:ok, person}` or `{:error, person}`
+
+  ## Examples
+
+    iex> fetch_person(1)
+    {:ok, %Person{}}
+
+    iex> fetch_person(2)
+    {:error, "Person not found."}
+
+  """
+
+  def fetch_person(id) do
+    if person = Repo.get(Learnathon.SubmissionManager.Person, id) do
+      {:ok, person}
+    else
+      {:error, :not_found}
+    end
+  end
+
+  @doc """
   Creates a person
 
   ## Examples
@@ -129,6 +152,30 @@ defmodule Learnathon.SubmissionManager do
     else
       {:errors, changeset}
     end
+  end
+
+  @doc """
+  Register a person by saving a password for authentication.
+  - Password must be at least 6 chars.
+  - Inserts or Updates specified model.
+  - Returns a tuple with an atom of `:ok` and a `Person` struct.
+  - If there is an error returns `{:error, changeset}`
+
+    iex> params = %{name: "Seal", email: "seal@gmail.com", password: "123456"}
+    iex> {:ok, person} = register_person(params)
+
+    iex> invalid_params = %{name: "Seal", email: "s", password: "12345"}
+    iex> {:errors, changeset} = register_person(%Person{}, params)
+
+  """
+
+  def register_person(params) do
+    case Repo.get_by(Person, email: params["email"]) do
+      nil  -> %Person{}
+      person -> person
+    end
+    |> SubmissionManager.registration_changeset(params)
+    |> Repo.insert_or_update
   end
 
   @doc """
@@ -238,6 +285,7 @@ defmodule Learnathon.SubmissionManager do
 
       iex> confirm_person(confirmation_code)
       {:ok, %Person
+
   """
 
   def confirm_person(confirmation_code) do
@@ -247,6 +295,27 @@ defmodule Learnathon.SubmissionManager do
     |> update_person(%{confirmed: true})
   end
 
+  @doc """
+  Return a changeset for a Person.
+  This Changeset will validate a few things.
+  - name and email are required
+  - email must be unique
+  - validates the format of an email
+
+  ## Example
+  
+  iex> person_changeset(%Person{}, %{name: "sam", email: "sam@gmail.com"})
+   #Ecto.Changeset<action: nil, changes: %{email: "sam@gmail.com", name: "sam"},
+    errors: [], data: #Learnathon.SubmissionManager.Person<>, valid?: true>
+
+  iex> person_changeset(%Person{}, %{})
+  #Ecto.Changeset<action: nil, changes: %{},
+    errors: [name: {"can't be blank", [validation: :required]},
+    email: {"can't be blank", [validation: :required]}],
+    data: #Learnathon.SubmissionManager.Person<>, valid?: false>
+
+  """
+
   def person_changeset(%Person{} = person, params \\ %{}) do
     person
     |> cast(params, person_permitted_attributes())
@@ -255,11 +324,64 @@ defmodule Learnathon.SubmissionManager do
     |> validate_format(:email, email_format_regex())
   end
 
+  @doc """
+  Return a confirmation code changeset.
+  This Changeset will validate a few things.
+  - a body is required (this is a generated hash)
+  - must be associated with a person
+
+    ## Example
+
+    iex> cs = SubmissionManager.confirmation_changeset(%ConfirmationCode{},
+              %{body: SubmissionManager.generate_hash()})
+    true
+
+    iex> cs = confirmation_changeset(%ConfirmationCode{}, %{body: "123"})
+    iex> cs.valid?
+    false
+
+  """
+
   def confirmation_changeset(%ConfirmationCode{} = confirmation, params \\ %{}) do
     confirmation
     |> cast(params, [:email, :body, :person_id])
+    |> validate_length(:body, min: 64, max: 64)
     |> put_assoc(:person, required: true)
     |> validate_required([:body])
+  end
+
+  @doc """
+  Return a registration changeset for a Person
+  This changeset will validate a password
+  - :password must be a min of 6 and max of 100 chars
+  - if the changeset is valid it will return a changeset
+    with a :password_hash
+
+    iex> person = %Person{name: "Ben", email: "dude@gmail.com"}
+    iex> changeset = registration_changeset(person, %{password: "123456"})
+    iex> changeset.valid?
+    true
+
+    iex> changeset = registration_changeset(person, %{password: "1"})
+    iex> changeset.valid?
+    false
+
+  """
+
+  def registration_changeset(model, params) do
+    model
+    |> person_changeset(params)
+    |> cast(params, ~w(password))
+    |> validate_length(:password, min: 6, max: 100)
+    |> put_pass_hash()
+  end
+
+  defp put_pass_hash(changeset) do
+    case changeset do
+      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
+        put_change(changeset, :password_hash, Comeonin.Bcrypt.hashpwsalt(pass))
+      _ -> changeset
+    end
   end
 
   def last_created_confirmation_code(person) do
@@ -272,7 +394,7 @@ defmodule Learnathon.SubmissionManager do
 
   defp person_permitted_attributes do
     [:name, :email, :workshop_idea, :time_needed, :company, :contribution, 
-    :donation, :swag, :prizes, :confirmed]
+    :donation, :swag, :prizes, :confirmed, :username]
   end
 
   defp email_format_regex do

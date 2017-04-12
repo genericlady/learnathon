@@ -1,0 +1,10 @@
+<h1 style="color: white;">Listing People</h1>
+
+<table class="people-table table">
+<%= for person <- @people do %>
+  <tr>
+    <td><b><%= render "person.html", person: person %></b></td>
+    <td><%= link "View", to: person_path(@conn, :show, person.id) %></td>
+  </tr>
+<% end %>
+</table>

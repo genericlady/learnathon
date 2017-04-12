@@ -8,20 +8,23 @@ defmodule Learnathon.Email do
   #
   def welcome_email(person) do
     Transmission.send(%Transmission{
-    recipients: [person.email],
-    content: %Content.Inline{
-    from: "submissions@learnathon.nyc",
-    subject: "Welcome to learnathon.nyc!",
-    html: welcome_html(),
-    text: welcome_plain()
-    }
-  })
-    # base_email()
-    # |> to(person.email)
-    # |> subject("Welcome to learnathon.nyc!")
-    # |> put_header("Reply-To", "submissions@learnathon.nyc")
-    # |> html_body(welcome_html())
-    # |> text_body(welcome_plain())
+      recipients: [person.email],
+      content: %Content.Inline{
+      from: "submissions@learnathon.nyc",
+      subject: "Welcome to learnathon.nyc!",
+      html: welcome_html(),
+      text: welcome_plain()
+      }
+    })
+  end
+
+  def bamboo_welcome_email(person) do
+    base_email()
+    |> to(person.email)
+    |> subject("Welcome to learnathon.nyc!")
+    |> put_header("Reply-To", "submissions@learnathon.nyc")
+    |> html_body(welcome_html())
+    |> text_body(welcome_plain())
   end
 
   def confirmation_email(person, confirmation, conn) do
@@ -34,12 +37,15 @@ defmodule Learnathon.Email do
       text: confirmation_plain(confirmation, conn)
       }
     })
-    # base_email()
-    # |> to(person.email)
-    # |> subject("Please confirm your email address for learnathon.nyc!")
-    # |> put_header("Reply-To", "submissions@learnathon.nyc")
-    # |> html_body(confirmation_html(confirmation, conn))
-    # |> text_body(confirmation_plain())
+  end
+
+  def bamboo_confirmation_email(person, confirmation, conn) do
+    base_email()
+    |> to(person.email)
+    |> subject("Please confirm your email address for learnathon.nyc!")
+    |> put_header("Reply-To", "submissions@learnathon.nyc")
+    |> html_body(confirmation_html(confirmation, conn))
+    |> text_body(confirmation_plain(confirmation, conn))
   end
 
   def confirmation_success(person) do

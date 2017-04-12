@@ -1,0 +1,18 @@
+{
+  "lib/learnathon/web/controllers/*_controller.ex": {
+    "alternate": "test/web/controllers/{}_controller_test.ex",
+    "type": "controller"
+  },
+  "test/web/controllers/*_controller_test.ex": {
+    "alternate": "lib/learnathon/web/controllers/{}_controller.ex"
+  },
+  "lib/learnathon/submission_manager/submission_manager.ex": {
+    "alternate": "test/submission_manager/submission_manager_test.exs",
+    "type": "sub"
+  },
+  "test/submission_manager/submission_manager_test.exs": {
+    "alternate": "lib/learnathon/submission_manager/submission_manager.ex"
+  },
+  "lib/learnathon/web/router.ex": {"type": "router"}
+}
+

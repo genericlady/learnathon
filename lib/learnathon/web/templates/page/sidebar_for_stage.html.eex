@@ -1,6 +1,6 @@
 <div class="stage-shelf hidden" id="sidebar">
   <ul class="nav nav-bordered nav-stacked flex-column">
-    <li class="nav-header"><small>Host a Workshop and/or Become A Sponsor!</small></li>
+    <li class="nav-header"><small>Give a talk or run a Workshop!</small></li>
     <li class="nav-item">
       <%= render "workshop_form.html", %{conn: @conn} %>
     </li>

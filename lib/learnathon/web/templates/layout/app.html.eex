@@ -31,6 +31,17 @@
   </head>
 
   <body>
+    <%= if @current_person do %>
+      <div class="header">
+        <ol class="breadcrumb text-right">
+          <li><%= @current_person.email %></li>
+          <li><%= link "Log Out", 
+                  to: session_path(@conn, :delete, @current_person), 
+                  method: "delete" %>
+          </li>
+        </ol>
+      </div>
+    <% end %>
     <div class="container">
 
       <%= show_flash(@conn) %>

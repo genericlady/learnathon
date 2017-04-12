@@ -9,7 +9,13 @@ defmodule Learnathon.Web.FallbackController do
   def call(conn, {:errors, %Ecto.Changeset{} = changeset}) do
     conn
     |> put_flash(:errors, changeset.errors)
-    |> redirect(to: page_path(conn, :index))
+    |> redirect(to: person_path(conn, :index))
+  end
+
+  def call(conn, {:error, %Ecto.Changeset{} = changeset}) do
+    conn
+    |> put_flash(:errors, changeset.errors)
+    |> redirect(to: person_path(conn, :new))
   end
 
   def call(conn, {:error, :not_found}) do

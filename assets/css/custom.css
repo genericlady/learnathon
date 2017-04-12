@@ -28,5 +28,15 @@ ul.alert {font-size: 1.33337rem !important;}
 button { white-space: normal !important; }
 
 .ticket-iframe {
-  height: 23rem; 
+  height: 39rem; 
 }
+
+.people-table {
+  color: white;
+}
+
+.new-person, .person-article {
+  color: white;
+}
+
+.login {color: white;}

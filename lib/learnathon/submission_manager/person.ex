@@ -12,6 +12,9 @@ defmodule Learnathon.SubmissionManager.Person do
     field :company, :string
     field :contribution, :integer
     field :confirmed, :boolean
+    field :username, :string
+    field :password, :string, virtual: true
+    field :password_hash, :string
 
     has_many :confirmation_codes, Learnathon.SubmissionManager.ConfirmationCode
   end

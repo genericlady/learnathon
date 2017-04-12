@@ -17,11 +17,14 @@ defmodule Learnathon.Web.SubmissionController do
                                   ]
 
   action_fallback Learnathon.Web.FallbackController
+  plug :scrub_params, "submission" when action in [:create]
 
   def create(conn, %{"submission" => submission}) do
 
+    changeset = SubmissionManager.person_changeset(%Person{}, submission)
     with {:ok, %Person{} = person} <- get_or_create_person(submission),
-         {:ok, %ConfirmationCode{} = confirmation} <- create_person_confirmation(person) do
+         {:ok, %ConfirmationCode{} = confirmation}
+         <- create_person_confirmation(person) do
 
       email_confirmation(conn, person, confirmation)
 
@@ -51,7 +54,6 @@ defmodule Learnathon.Web.SubmissionController do
   end
 
   defp validate_confirmation_params(params) do
-    IO.inspect params["submission"]
     if (String.length(params["submission"]) == 64) do
       {:ok, params}
     else

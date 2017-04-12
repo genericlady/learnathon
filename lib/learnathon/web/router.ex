@@ -12,6 +12,7 @@ defmodule Learnathon.Web.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Learnathon.Auth, repo: Learnathon.Repo
   end
 
   pipeline :api do
@@ -19,12 +20,20 @@ defmodule Learnathon.Web.Router do
   end
 
   scope "/", Learnathon.Web do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
-    get "/", PageController, :index
     get "/submission", SubmissionController, :confirm
     post "/submission", SubmissionController, :create
     put "/submission", SubmissionController, :update
+
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
+
+    get "/", PageController, :index
+  end
+
+  scope "/", Learnathon.Web do
+    pipe_through [:browser, :authenticate_person]
+    resources "/people", PersonController, only: [:index, :show, :new, :create]
   end
 
   # Other scopes may use custom stacks.

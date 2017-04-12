@@ -1,0 +1,32 @@
+<ul>
+  <li>
+    <b>Full Name: </b><%= @person.name %> (<%= @person.id %>)
+  </li>
+  <li>
+    <b>Workshop Idea: </b><%= @person.workshop_idea %>
+  </li>
+  <li>
+    <b>Email: </b><%= @person.email %>
+  </li>
+  <li>
+    <b>Company: </b><%= @person.company %>
+  </li>
+  <li>
+    <b>Confirmed: </b><%= @person.confirmed %>
+  </li>
+  <li>
+    <b>Swag: </b><%= @person.swag %>
+  </li>
+  <li>
+    <b>Donation: </b><%= @person.donation %>
+  </li>
+  <li>
+    <b>Contribution: </b><%= @person.contribution %>
+  </li>
+  <li>
+    <b>Prizes: </b><%= @person.prizes %>
+  </li>
+  <li>
+    <b>Time Needed: </b><%= @person.time_needed %>
+  </li>
+</ul>

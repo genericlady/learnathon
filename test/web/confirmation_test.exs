@@ -1,4 +1,4 @@
-defmodule Learnathon.Confirmation do
+defmodule Learnathon.ConfirmationTest do
   import Learnathon.Factory
 
   alias Learnathon.{SubmissionManager, Email}

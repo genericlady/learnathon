@@ -13,7 +13,8 @@
             <span class="text-ribbon text-muted">
               <span>
                 All we ask is that you enjoy yourself, learn something new and
-                share something that you know with someone you meet.
+                share something that you know with someone you meet. 
+                <bold><em>Donations are appreciated.</em></bold>
               </span>
             </span>
             </p>
@@ -52,7 +53,7 @@
         <div class="col-12">
           <h2 style="color: black !important; position: 0px;" 
               class="text-ribbon text-ribbon-primary">
-            Looking for volunteers to run workshops!
+            Looking for volunteers to give talks or run workshops!
           </h2>
           <%= render "workshop_form.html", %{conn: @conn} %>
         </div>

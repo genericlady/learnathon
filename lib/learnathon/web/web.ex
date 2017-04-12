@@ -22,6 +22,8 @@ defmodule Learnathon.Web do
       import Plug.Conn
       import Learnathon.Web.Router.Helpers
       import Learnathon.Web.Gettext
+      import Learnathon.Auth, only: [authenticate_person: 2]
+      alias Learnathon.Repo
     end
   end
 
@@ -57,6 +59,7 @@ defmodule Learnathon.Web do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Learnathon.Auth, only: [authenticate_person: 2]
     end
   end
 

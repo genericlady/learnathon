@@ -28,6 +28,7 @@ defmodule Learnathon.Mixfile do
         :postgrex,
         :bamboo,
         :sparkpost,
+        :comeonin,
       ]
     ]
   end
@@ -49,13 +50,13 @@ defmodule Learnathon.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:mailgun, "~> 0.1.2"},
       {:poison, "~> 2.1", override: true},
       {:elixir_linter, "~> 0.1.0"},
       {:ex_machina, "~> 2.0", only: :test},
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
       {:sparkpost, "~> 0.3.0"},
       {:bamboo_sparkpost, "~> 0.5.0", override: true},
+      {:comeonin, "~> 3.0"},
     ]
   end
 

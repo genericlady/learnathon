@@ -1,0 +1,4 @@
+<article class="person-article">
+  <h1>Showing User</h1>
+  <%= render "person.html", person: @person %>
+</article>

@@ -1,0 +1,4 @@
+<article class="new-person">
+  <h1>New Person</h1>
+  <%= render "form.html", conn: @conn, changeset: @changeset %>
+</article>

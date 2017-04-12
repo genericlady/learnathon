@@ -7,9 +7,9 @@
   <%= email_input form, :email, 
     [class: "form-control", placeholder: "Email"]  %>
   <%= textarea form, :workshop_idea, 
-    [class: "form-control", placeholder: "Workshop Idea"]  %>
+    [class: "form-control", placeholder: "Talk or Workshop Description"]  %>
   <%= text_input form, :time_needed, 
-    [class: "form-control", placeholder: "Time Needed (45m - 90m blocks available)"]  %>
+    [class: "form-control", placeholder: "Time Needed (20m - 90m blocks available)"]  %>
 
   <label id="sponsor" style="color: white;">
     Would you like to be a sponsor?
