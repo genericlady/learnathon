@@ -1,9 +1,9 @@
 <div class="block block-inverse block-fill-height accent-primary" id="footer">
   <div class="container">
     <div class="row text-serif">
-      <div class="col-md-2 mb-4">
+      <div class="col-md-3 mb-4">
         <ul class="list-unstyled list-spaced">
-          <li><h4>Workshops</h4></li>
+          <li><h4 class="text-center">Speakers</h4></li>
           <li class="text-muted"><em>TBA</em></li>
           <!--
           <li class="text-muted"><em>Design</em></li>
@@ -12,21 +12,15 @@
           -->
         </ul>
       </div>
-      <div class="col-md-2 mb-4">
+      <div class="col-md-3 mb-4">
         <ul class="list-unstyled list-spaced">
-          <li><h4>Sponsors</h4></li>
-          <li class="text-muted"><em>TBA</em></li>
-          <!--
-          <li class="text-muted"><em>Design</em></li>
-          <li class="text-muted"><em>Display</em></li>
-          <li class="text-muted"><em>Technology</em></li>
-          -->
-        </ul>
-      </div>
-      <div class="col-md-2 mb-4">
-        <ul class="list-unstyled list-spaced">
-          <li><h4>Prizes</h4></li>
-          <li class="text-muted"><em>TBA</em></li>
+          <li><h4 class="text-center">Sponsors</h4></li>
+          <li class="text-muted pt-1">
+            <img class="w-100" src="images/flatiron-logo.png">
+          </li>
+          <li class="text-muted pt-3">
+            <img class="w-100" src="images/hackerearth.png">
+          </li>
           <!--
           <li class="text-muted"><em>Design</em></li>
           <li class="text-muted"><em>Display</em></li>
@@ -36,8 +30,8 @@
       </div>
       <div class="col-md-6 mb-4">
         <ul class="list-unstyled list-spaced">
-          <li><h4>Code of Conduct</h4></li>
-          <li class="text-muted">
+          <li><h4 class="text-center">Code of Conduct</h4></li>
+          <li class="text-muted text-justify">
             <em>
               Our event is designed to foster meaningful collaboration between 
               participants, community members, and government partners.

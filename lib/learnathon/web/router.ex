@@ -22,6 +22,7 @@ defmodule Learnathon.Web.Router do
   scope "/", Learnathon.Web do
     pipe_through :browser
 
+    get "/skill_level_and_interests", SurveyController, :show
     get "/submission", SubmissionController, :confirm
     post "/submission", SubmissionController, :create
     put "/submission", SubmissionController, :update
