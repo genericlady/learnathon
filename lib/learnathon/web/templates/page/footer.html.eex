@@ -1,18 +1,18 @@
 <div class="block block-inverse block-fill-height accent-primary" id="footer">
   <div class="container">
     <div class="row text-serif">
+      <!--
       <div class="col-md-3 mb-4">
         <ul class="list-unstyled list-spaced">
           <li><h4 class="text-center">Speakers</h4></li>
           <li class="text-muted"><em>TBA</em></li>
-          <!--
           <li class="text-muted"><em>Design</em></li>
           <li class="text-muted"><em>Display</em></li>
           <li class="text-muted"><em>Technology</em></li>
-          -->
         </ul>
       </div>
-      <div class="col-md-3 mb-4">
+      -->
+      <div class="col-md-6 mb-4">
         <ul class="list-unstyled list-spaced">
           <li><h4 class="text-center">Sponsors</h4></li>
           <li class="text-muted pt-1">
