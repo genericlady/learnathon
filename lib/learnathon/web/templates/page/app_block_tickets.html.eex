@@ -14,7 +14,6 @@
               <span>
                 All we ask is that you enjoy yourself, learn something new and
                 share something that you know with someone you meet. 
-                <bold><em>Donations are appreciated.</em></bold>
               </span>
             </span>
             </p>
@@ -27,8 +26,9 @@
               <h3 class="card-title">Day One</h3>
               <p class="text-serif mb-1">
               <em>
-                Day one is full of workshops to watch and participate in.
+                Day one is full of talks and we are currently sold out.
               </em>
+              We promise to notify everybody if we choose to release more tickets. <a href="#subscribe">Give us your email and you will hear from us when they become available.</a>
               </p>
               <%= render "tickets_day_one.html" %>
             </div>
