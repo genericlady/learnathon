@@ -26,9 +26,9 @@
               <h3 class="card-title">Day One</h3>
               <p class="text-serif mb-1">
               <em>
-                Day one is full of talks and we are currently sold out.
+                Day one is full of talks and we<strike> are currently sold out.</strike>
               </em>
-              We promise to notify everybody if we choose to release more tickets. <a href="#subscribe">Give us your email and you will hear from us when they become available.</a>
+              <strike>We promise to notify everybody if we choose to release more tickets. <a href="#subscribe">Give us your email and you will hear from us when they become available.</a></strike>We have made more tickets available. Enjoy!
               </p>
               <%= render "tickets_day_one.html" %>
             </div>
