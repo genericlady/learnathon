@@ -1,4 +1,7 @@
 {
+  "lib/learnathon/web/templates/page/*.html.eex": {
+    "type": "page"
+  },
   "lib/learnathon/web/controllers/*_controller.ex": {
     "alternate": "test/web/controllers/{}_controller_test.ex",
     "type": "controller"

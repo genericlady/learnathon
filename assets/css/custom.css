@@ -40,3 +40,16 @@ button { white-space: normal !important; }
 }
 
 .login {color: white;}
+
+.card-header {background-color: #151515 !important;}
+
+.nav-tabs .nav-link.active {
+  color: white !important;
+  background-color: #5e5f5e !important;
+  border-color: yellow !important;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  color: white !important;
+  background-color: #5e5f5e !important;
+}

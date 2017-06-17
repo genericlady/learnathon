@@ -2,6 +2,7 @@
 <div class="stage" id="stage">
 
   <%= render "app_block_liberty.html" %>
+  <%= render "app_block_speakers.html" %>
   <%= render "app_block_flatiron.html" %>
   <%= render "app_block_tickets.html", conn: @conn %>
   <%= render "app_block_stay_up_to_date.html", conn: @conn %>

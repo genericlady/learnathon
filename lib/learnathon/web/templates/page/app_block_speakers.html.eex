@@ -1,0 +1,250 @@
+<div class="block block-inverse block-fill-height app-block-speakers">
+  <h3>Speakers</h3>
+
+  <div class="row">
+
+    <div class="col-md-6 speaker-card card card-outline-warning mb-3">
+      <div class="row">
+        <div class="col-4 p-0 speaker-avatar">
+          <img class="card-img-left w-100" src="https://flatiron-v3-production.imgix.net/avi-flombaum.jpg?fit=facearea&facepad=2&w=240&h=240" alt="Card image cap">
+        </div>
+
+        <div class="col-8">
+          <div class="row">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" role="tab" href="#bioAvi">Bio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" role="tab" href="#talkAvi">Talk</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="tab-content col-12 p-0">
+              <div class="tab-pane active" id="bioAvi">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Avi Flombaum</h4>
+                  <p class="card-text bio">New York native, founder of Flatiron and developer.</p>
+                </div>
+              </div>
+              <div class="tab-pane" id="talkAvi">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Learning How To Learn</h4>
+                  <p class="card-text bio">This is my talk</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 speaker-card card card-outline-warning mb-3">
+      <div class="row">
+        <div class="col-4 p-0 speaker-avatar">
+          <img class="card-img-left w-100" src="http://media2.inktastic.com/thumbnail/645/35/35645.1.png" alt="Card image cap">
+        </div>
+
+        <div class="col-8">
+          <div class="row">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" role="tab" href="#bioJesse">Bio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" role="tab" href="#talkJesse">Talk</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="tab-content col-12 p-0">
+              <div class="tab-pane active" id="bioJesse">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Jesse Bees</h4>
+                  <p class="card-text bio">Engineer at Huffington Post with a passion for computers and art.</p>
+                </div>
+              </div>
+              <div class="tab-pane" id="talkJesse">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Hardware Hack / Art Installation</h4>
+                  <p class="card-text bio">description to come soon.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 speaker-card card card-outline-warning mb-3">
+      <div class="row">
+        <div class="col-4 p-0 speaker-avatar">
+          <img class="card-img-left w-100" src="images/mirabai.jpg" alt="Card image cap">
+        </div>
+
+        <div class="col-8">
+          <div class="row">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" role="tab" href="#bioMirabai">Bio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" role="tab" href="#talkMirabai">Talk</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="tab-content col-12 p-0">
+              <div class="tab-pane active" id="bioMirabai">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Mirabai Knight</h4>
+                  <p class="card-text bio">Mirabai Knight is a professional realtime stenocaptioner for deaf and hard of hearing students and professionals in New York City. She is certified to produce text at 260 words per minute and is a strategic partner of White Coat Captioning, a realtime firm that specializes in captioning for medical schools and tech conferences. She is also the founder of The Open Steno Project, an open source community that works to make steno technology more accessible to amateurs, hobbyists, and enthusiasts.</p>
+                </div>
+              </div>
+              <div class="tab-pane" id="talkMirabai">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Stenohack</h4>
+                  <p class="card-text bio">Conducts a 45 minute talk followed by Stenohack. A Hackathon to hack your typing. We will be raffling off a Plank keyboard.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 speaker-card card card-outline-warning mb-3">
+      <div class="row">
+        <div class="col-4 p-0 speaker-avatar">
+          <img class="card-img-left w-100" src="images/melissa.png" alt="Card image cap">
+        </div>
+
+        <div class="col-8">
+          <div class="row">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" role="tab" href="#bioMelissa">Bio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" role="tab" href="#talkMelissa">Talk</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="tab-content col-12 p-0">
+              <div class="tab-pane active" id="bioMelissa">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Melissa Carroll Wahnish</h4>
+                  <p class="card-text bio">Melissa is the founder of RubyThursday, a free weekly online show that gives junior Rails developers bite sized tutorials, tips and tricks to help them grow.  She co-organizes the Ruby Roundtable Meetup, the longest running Ruby meetup in NYC.  Along with her husband, she builds startups for non-technical entrepreneurs.  Melissa is also an actor with a BA in Theater from Marymount Manhattan College.  She has toured nationally and appeared in numerous plays and films.  She loves sci-fi and knitting.</p>
+                </div>
+              </div>
+              <div class="tab-pane" id="talkMelissa">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Contributing to Open Source -- You can do it!</h4>
+                  <p class="card-text bio">In this presentation, Melissa will outline the various ways you can contribute to open source projects. After talking through some tips and demonstrating Rails examples, she'll share a few ways to get started.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 speaker-card card card-outline-warning mb-3">
+      <div class="row">
+        <div class="col-4 p-0 speaker-avatar">
+          <img class="card-img-left w-100" src="images/darie.jpeg" alt="Card image cap">
+        </div>
+
+        <div class="col-8">
+          <div class="row">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" role="tab" href="#bioDarie">Bio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" role="tab" href="#talkDarie">Talk</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="tab-content col-12 p-0">
+              <div class="tab-pane active" id="bioDarie">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Darie Dreptate</h4>
+                  <p class="card-text bio">Darie Dreptate is a technology leader passionate about Lean and Agile methodologies, DevOps practices and healthy engineering culture. He is currently the Head of DevOps at Microstrategy and has previously served as CTO of Cipher Systems and as co-founder of Zennity.com. Darie lives in Washington DC with his wife Yvonne (proud bootcamper at Flatiron) and Jedi, their charismatic Shiba Inu.</p>
+                </div>
+              </div>
+              <div class="tab-pane" id="talkDarie">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">How DevOps practices maximize your outcome.</h4>
+                  <p class="card-text bio">In this session we will talk about the most important and impactful DevOps practices. Learn why a strong full stack developer needs to master DevOps practices and how this is the secret ingredient to quickly become the most productive and impactful team member.We’ll explain concepts such as Continuos Integration and Deployment (CI/CD) as well as what metrics help measuring success and engineering maturity level for both individual contributors and teams. We’ll wrap-up with a Q&A session.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 speaker-card card card-outline-warning mb-3">
+      <div class="row">
+        <div class="col-4 p-0 speaker-avatar">
+          <img class="card-img-left w-100" src="http://www.manyiterations.com/assets/profile.jpg" alt="Card image cap">
+        </div>
+
+        <div class="col-8">
+          <div class="row">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" role="tab" href="#bioYianna">Bio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" role="tab" href="#talkYianna">Talk</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="tab-content col-12 p-0">
+              <div class="tab-pane active" id="bioYianna">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Yianna Kokalas</h4>
+                  <p class="card-text bio">New York native that grew up as a gaming script kiddie. Spent a large abundance of time on Efnet growing up and reading tuts. Recently a couple of years ago Yianna decided to take programming on as a career and has neer looked back. She is also a Teacher Assistant for Flatirons online curriculum <a href="http://learn.co">learn.co</a></p>
+                </div>
+              </div>
+              <div class="tab-pane" id="talkYianna">
+                <div class="card-block pl-0 pt-3">
+                  <h4 class="card-title">Why Ruby will forever be important and how Elixir is the future.</h4>
+                  <p class="card-text bio">Ruby is never going to go away and will forever be one of the most influential languages of all time. In this talk you will see comparisons to Elixir and how Ruby has inspired it. There will be a discussion of the big differences between OO and Functional using these languages as an example.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
