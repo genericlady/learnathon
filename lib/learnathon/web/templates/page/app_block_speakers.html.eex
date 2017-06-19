@@ -196,7 +196,7 @@
               <div class="tab-pane" id="talkYianna">
                 <div class="card-block pl-0 pt-3">
                   <h4 class="card-title">A Ruby and Elixir comparison.</h4>
-                  <p class="card-text bio">Ruby has become a classic and is therefore pivotal in the creation of newer languages. One such language which is taking the programming community by storm is Elixir. We'll be going over reasons why it's important to know both languages and the similarities between them. There will also be comparisons between their most popular web frameworks (Rails and Phoenix)</p>
+                  <p class="card-text bio">Ruby has become a classic and is therefore pivotal in the creation of newer languages. One such language is Elixir and it is taking the programming community by storm. We'll be going over reasons why it's important to know both languages and the similarities between them. There will also be comparisons between their most popular web frameworks (Rails and Phoenix)</p>
                 </div>
               </div>
             </div>
