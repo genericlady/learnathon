@@ -1,0 +1,23 @@
+<div class="block block-inverse block-fill-height app-block-speakers">
+  <h2>StenoHack at Learnathon.nyc Sunday 6/25 Hack Your Typing</h2>
+  <p>We are starting with a talk by Mirabai Knight where you will learn how she types 260wpm. After the talk, when you're inspired to hack your typing, you will build your own steno typing tutor in any language and stack of your choice. We are asking that your program should work with 1 to 3-key chords and be as fun and addictive as possible.</p> 
+
+  <p>Other guidelines:</p>
+  <ul>
+    <li>Don't penalize for backspaces</li>
+    <li>Don't allow partial word deletion</li>
+    <li>Use provided word lists for content</li>
+    <li>Focus on teaching the steno keyboard layout and common words made up of 1 to 3-key chords</li>
+  </ul>
+
+  <p>You will break up into groups of 1-6 people. The ability to use steno on your laptop requires you to install Plover, an open source steno engine commissioned by Mirabai. We also recommend people with keyboards that support N Key Rollover to bring them with you. There will be a few keyboards there for you to try out courtesy of Mirabai.</p>
+
+  <h2>About Mirabai</h2>
+  <p>Mirabai Knight is a professional realtime stenocaptioner for deaf and hard of hearing students and professionals in New York City. She is certified to produce text at 260 words per minute and is a strategic partner of White Coat Captioning, a realtime firm that specializes in captioning for medical schools and tech conferences. She is also the founder of The Open Steno Project, an open source community that works to make steno technology more accessible to amateurs, hobbyists, and enthusiasts.</p>
+
+  <h2>Raffle Prizes</h2>
+  <ul>
+    <li>A fully assembled plank keyboard</li>
+    <li>T-Shirt Giveaways</li>
+  </ul>
+</div>
