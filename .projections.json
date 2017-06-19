@@ -1,6 +1,15 @@
 {
+  "lib/learnathon/web/views/*_view.ex": {
+    "type": "view"
+  },
+  "lib/learnathon/web/templates/*.html.eex": {
+    "type": "template"
+  },
   "lib/learnathon/web/templates/page/*.html.eex": {
     "type": "page"
+  },
+  "lib/learnathon/web/templates/speaker/*.html.eex": {
+    "type": "speaker"
   },
   "lib/learnathon/web/controllers/*_controller.ex": {
     "alternate": "test/web/controllers/{}_controller_test.ex",

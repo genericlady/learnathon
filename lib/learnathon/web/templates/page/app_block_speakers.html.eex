@@ -28,53 +28,13 @@
               <div class="tab-pane active" id="bioAvi">
                 <div class="card-block pl-0 pt-3">
                   <h4 class="card-title">Avi Flombaum</h4>
-                  <p class="card-text bio">New York native, founder of Flatiron and developer.</p>
+                  <p class="card-text bio">Avi has changed thousands of lives by teaching students – with little to no experience – to code and actually launch careers as developers. A self-taught programming prodigy and CTO-by-20, Avi is passionate about helping people learn to love code.</p>
                 </div>
               </div>
               <div class="tab-pane" id="talkAvi">
                 <div class="card-block pl-0 pt-3">
-                  <h4 class="card-title">Learning How To Learn</h4>
-                  <p class="card-text bio">description to come soon.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 speaker-card card card-outline-warning mb-3">
-      <div class="row">
-        <div class="col-4 p-0 speaker-avatar">
-          <img class="card-img-left w-100" src="http://media2.inktastic.com/thumbnail/645/35/35645.1.png" alt="Card image cap">
-        </div>
-
-        <div class="col-8">
-          <div class="row">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" role="tab" href="#bioJesse">Bio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" role="tab" href="#talkJesse">Talk</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="tab-content col-12 p-0">
-              <div class="tab-pane active" id="bioJesse">
-                <div class="card-block pl-0 pt-3">
-                  <h4 class="card-title">Jesse Bees</h4>
-                  <p class="card-text bio">Engineer at Huffington Post with a passion for computers and art.</p>
-                </div>
-              </div>
-              <div class="tab-pane" id="talkJesse">
-                <div class="card-block pl-0 pt-3">
-                  <h4 class="card-title">Hardware Hack / Art Installation</h4>
-                  <p class="card-text bio">description to come soon.</p>
+                  <h4 class="card-title">Learning How to Learn</h4>
+                  <p class="card-text bio">Effective learning meanings thinking about your process as you concentrate on the topic and material. In this talk, Avi Flombaum will share some insights into improving the effectiveness of the time you invest. We'll cover ways to stay motivated, fall in love with the problem, plan an approach, debug and adjust your strategy, and research topics holistically. You'll leave with actionable ideas to try so you can become a better learner.</p>
                 </div>
               </div>
             </div>
@@ -230,13 +190,13 @@
               <div class="tab-pane active" id="bioYianna">
                 <div class="card-block pl-0 pt-3">
                   <h4 class="card-title">Yianna Kokalas</h4>
-                  <p class="card-text bio">New York native that grew up as a gaming script kiddie. Spent a large abundance of time on Efnet growing up and reading tuts. Recently a couple of years ago Yianna decided to take programming on as a career and has neer looked back. She is also a Teacher Assistant for Flatirons online curriculum <a href="http://learn.co">learn.co</a></p>
+                  <p class="card-text bio">New York native that grew up as a gaming script kiddie. She is currently a Teacher Assistant for Flatirons online curriculum <a href="http://learn.co">learn.co</a></p>
                 </div>
               </div>
               <div class="tab-pane" id="talkYianna">
                 <div class="card-block pl-0 pt-3">
-                  <h4 class="card-title">Why Ruby will forever be important and how Elixir is the future.</h4>
-                  <p class="card-text bio">Ruby is never going to go away and will forever be one of the most influential languages of all time. In this talk you will see comparisons to Elixir and how Ruby has inspired it. There will be a discussion of the big differences between OO and Functional using these languages as an example.</p>
+                  <h4 class="card-title">A Ruby and Elixir comparison.</h4>
+                  <p class="card-text bio">Ruby has become a classic and is therefore pivotal in the creation of newer languages. One such language which is taking the programming community by storm is Elixir. We'll be going over reasons why it's important to know both languages and the similarities between them. There will also be comparisons between their most popular web frameworks (Rails and Phoenix)</p>
                 </div>
               </div>
             </div>

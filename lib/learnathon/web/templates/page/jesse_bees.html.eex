@@ -1,0 +1,17 @@
+<div class="tab-content col-12 p-0">
+  <div class="tab-pane active" id="bioJesse">
+    <div class="card-block pl-0 pt-3">
+      <h4 class="card-title">Jesse Bees</h4>
+      <p class="card-text bio">
+        Engineer at Huffington Post with a passion for computers and art.
+      </p>
+    </div>
+  </div>
+  <div class="tab-pane" id="talkJesse">
+    <div class="card-block pl-0 pt-3">
+      <h4 class="card-title">Hardware Hack / Art Installation</h4>
+      <p class="card-text bio">description to come soon.</p>
+    </div>
+  </div>
+</div>
+
