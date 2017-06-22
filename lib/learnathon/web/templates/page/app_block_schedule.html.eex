@@ -1,5 +1,6 @@
 <div id="schedule" class="block block-inverse block-fill-height app-block-schedule">
   <h3>Schedule</h3>
+  <h4>Day One</h4>
   <table class="table table-inverse">
     <thead>
       <tr>
@@ -59,5 +60,28 @@
     </tbody>
   </table>
 
+  <h4>Day Two</h4>
+  <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">12:00pm - 12:45pm</th>
+        <td>Mirabai Talk</td>
+      </tr>
+      <tr>
+        <th scope="row">12:45pm - 1:15pm</th>
+        <td>Break up into groups</td>
+      </tr>
+      <tr>
+        <th scope="row">1:15pm - 5:00pm</th>
+        <td>Build</td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
