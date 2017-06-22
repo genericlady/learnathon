@@ -1,8 +1,8 @@
-<%= render "sidebar_for_stage.html", conn: @conn %>
 <div class="stage" id="stage">
 
   <%= render "app_block_liberty.html" %>
   <%= render "app_block_speakers.html" %>
+  <%= render "app_block_schedule.html" %>
   <%= render "app_block_stenohack.html" %>
   <%= render "app_block_flatiron.html" %>
   <%= render "app_block_tickets.html", conn: @conn %>

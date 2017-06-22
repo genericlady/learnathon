@@ -1,0 +1,63 @@
+<div class="block block-inverse block-fill-height app-block-schedule">
+  <h3>Schedule</h3>
+  <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">12:00pm - 12:30pm</th>
+        <td>Arrive and Mingle</td>
+      </tr>
+      <tr>
+        <th scope="row">12:30pm - 12:45pm</th>
+        <td>Enter Room and Find a seat.</td>
+      </tr>
+      <tr>
+        <th scope="row">12:45pm - 1:00pm</th>
+        <td>Opening Speech</td>
+      </tr>
+      <tr>
+        <th scope="row">1:00pm - 1:45pm</th>
+        <td>Melissa</td>
+      </tr>
+      <tr>
+        <th scope="row">1:45 - 2:00pm</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+        <th scope="row">2:00pm - 2:30pm</th>
+        <td>Darie</td>
+      </tr>
+      <tr>
+        <th scope="row">2:30pm - 3:00pm</th>
+        <td>Pizza</td>
+      </tr>
+      <tr>
+        <th scope="row">3:00pm - 3:30pm</th>
+        <td>Avi</td>
+      </tr>
+      <tr>
+        <th scope="row">3:30pm - 3:45pm</th>
+        <td>Break</td>
+      </tr>
+      <tr>
+        <th scope="row">3:45pm - 4:15pm</th>
+        <td>Yianna</td>
+      </tr>
+      <tr>
+        <th scope="row">4:15pm - 4:30pm</th>
+        <td>Closing Ceremony</td>
+      </tr>
+      <tr>
+        <th scope="row">4:30pm - 5:00pm</th>
+        <td>More Mingling and end of Day 1</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
