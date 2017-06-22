@@ -17,7 +17,8 @@
 
   <h2>Raffle Prizes</h2>
   <ul>
-    <li>A fully assembled plank keyboard</li>
+    <li><a class="raffle-link" href="https://olkb.com/planck/">A fully assembled plank keyboard</a></li>
+    <li><a class="raffle-link" href="https://www.google.com/search?q=stenomod&newwindow=1&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwiHgMj35tHUAhXMWT4KHe4NB0IQsAQIOQ&biw=582&bih=592">Stenomod Keyboard</a></li>
     <li>T-Shirt Giveaways</li>
   </ul>
 </div>

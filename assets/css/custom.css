@@ -55,3 +55,5 @@ button { white-space: normal !important; }
 }
 
 .navbar-brand { color: white !important; }
+
+.raffle-link:hover { cursor: pointer; }
