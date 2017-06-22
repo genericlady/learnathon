@@ -1,4 +1,4 @@
-<div class="block block-inverse block-fill-height app-block-speakers">
+<div id="speakers" class="block block-inverse block-fill-height app-block-speakers">
   <h3>Speakers</h3>
 
   <div class="row">

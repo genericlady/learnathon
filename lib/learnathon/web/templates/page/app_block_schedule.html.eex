@@ -1,4 +1,4 @@
-<div class="block block-inverse block-fill-height app-block-schedule">
+<div id="schedule" class="block block-inverse block-fill-height app-block-schedule">
   <h3>Schedule</h3>
   <table class="table table-inverse">
     <thead>

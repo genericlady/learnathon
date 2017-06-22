@@ -53,3 +53,5 @@ button { white-space: normal !important; }
   color: white !important;
   background-color: #5e5f5e !important;
 }
+
+.navbar-brand { color: white !important; }

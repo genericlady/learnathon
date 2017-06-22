@@ -1,4 +1,4 @@
-<div class="block block-inverse block-fill-height app-block-tickets"
+<div id="tickets" class="block block-inverse block-fill-height app-block-tickets"
      style="background-image: url()"
      id="pricing">
   <div class="block-xs-middle">

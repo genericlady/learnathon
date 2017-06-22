@@ -1,4 +1,4 @@
-<div class="block block-inverse block-fill-height app-block-speakers">
+<div id="hackathon" class="block block-inverse block-fill-height app-block-hackathon">
   <h2>StenoHack at Learnathon.nyc Sunday 6/25 Hack Your Typing</h2>
   <p>We are starting with a talk by Mirabai Knight where you will learn how she types 260wpm. After the talk, when you're inspired to hack your typing, you will build your own steno typing tutor in any language and stack of your choice. We are asking that your program should work with 1 to 3-key chords and be as fun and addictive as possible.</p> 
 
